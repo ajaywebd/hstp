@@ -1,0 +1,17 @@
+/* NavigationBar.css */
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #ffc107; /* Yellow hover color */
+  text-decoration: underline;
+}
+
+.navbar-dark .navbar-brand {
+  font-weight: bold;
+}
+
+.nav-item {
+  margin-left: 1rem; /* Space between menu items */
+}

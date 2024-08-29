@@ -45,7 +45,7 @@ const NavigationBar = () => {
                 Children Exercise
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link as={Link} to="/contact" className="nav-item">
+            <Nav.Link as={Link} to="/nutrition" className="nav-item">
               Nutritions
             </Nav.Link>
             <Nav.Link as={Link} to="/contact" className="nav-item">

@@ -9,7 +9,8 @@ import NotFound from "./pages/NotFound";
 import ChildrenDisease from "./pages/disease/ChildrenDisease";
 import FemaleDisease from "./pages/disease/FemaleDisease";
 import MaleDisease from "./pages/disease/MaleDisease";
-import HomeRemediesForAcne from "./components/HomeRemediesForAcne";
+import DisplayDisease from "./components/DisplayDisease";
+import Nutrition from "./pages/Nutrition";
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
         <Route path="/disease/maleDisease" element={<MaleDisease />} />
         <Route path="/disease/femaleDisease" element={<FemaleDisease />} />
         <Route path="/disease/childrenDisease" element={<ChildrenDisease />} />
-        <Route path="/homeRemedies" element={<HomeRemediesForAcne />} />
+        <Route path="/nutrition" element={<Nutrition />} />
+        <Route path="/displayDisease" element={<DisplayDisease />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
       <Footer />

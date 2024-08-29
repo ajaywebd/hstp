@@ -1,13 +1,6 @@
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const MaleDisease = () => {
-  const [clickValues, setClickValues] = useState([]); // State to hold all click values
-
-  const clickHandler = (value) => {
-    setClickValues((prevValues) => [...prevValues, Number(value)]); // Append the clicked value
-  };
-
   return (
     <>
       <div
@@ -32,39 +25,37 @@ const MaleDisease = () => {
           }}>
           {/* Buttons */}
           <Link
-            state={{ value: 1 }} // Passing the value "2" to HomeRemedies component
-            to="/homeRemedies"
+            state={{ value: 1, name: "male" }} // Passing the value "2" to HomeRemedies component
+            to="/displayDisease"
             className="btn btn-success mb-3">
             Abdominal pain
           </Link>
           <Link
             state={{ value: 2 }} // Passing the value "2" to HomeRemedies component
-            to="/homeRemedies"
+            to="/displayDisease"
             className="btn btn-success mb-3">
             Acne
           </Link>
           <Link
             state={{ value: 3 }} // Passing the value "2" to HomeRemedies component
-            to="/homeRemedies"
+            to="/displayDisease"
             className="btn btn-success mb-3">
             Allergies
           </Link>
           <Link
             state={{ value: 4 }} // Passing the value "2" to HomeRemedies component
-            to="/homeRemedies"
+            to="/displayDisease"
             className="btn btn-success mb-3">
             Athlete's foot
           </Link>
-        </div>
-      </div>
-      {/* <div>
-        
-        <div className="text-center">
-          <Link to="/homeRemedies" className="btn btn-success mb-3">
-            Abdominal pain
+          <Link
+            state={{ value: 6, name: "male" }} // Passing the value "2" to HomeRemedies component
+            to="/displayDisease"
+            className="btn btn-success mb-3">
+            Ajay Maurya
           </Link>
         </div>
-      </div> */}
+      </div>
     </>
   );
 };

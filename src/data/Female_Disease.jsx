@@ -1,4 +1,4 @@
-const Male_Disease = [
+const Female_Disease = [
   {
     id: 1,
     title: "Home Remedies for Abdominal Pain in Men",
@@ -133,7 +133,7 @@ const Male_Disease = [
 
   {
     id: 6,
-    title: "Home Remedies for Bloating in Men",
+    title: "Home Remedies for Bloating in Women",
     description:
       "Bloating is a common digestive issue that can cause discomfort and a feeling of fullness or swelling in the abdomen. It can result from overeating, eating certain foods, or digestive disorders. Here are several home remedies to help alleviate bloating along with precautions to ensure their safe use.",
     remedies: [
@@ -254,4 +254,4 @@ const Male_Disease = [
   },
 ];
 
-export default Male_Disease;
+export default Female_Disease;

@@ -32,17 +32,20 @@ const NavigationBar = () => {
               </NavDropdown.Item>
             </NavDropdown>
             <NavDropdown
-              title="Exercises"
+              title="Exercises & Yoga"
               id="basic-nav-dropdown"
               className="nav-item">
-              <NavDropdown.Item as={Link} to="/action/3.1">
+              <NavDropdown.Item as={Link} to="/exercise/aerobicExercise">
                 Aerobic Exercise
               </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/action/3.2">
+              <NavDropdown.Item as={Link} to="exercise/pilateExercise">
                 Pilates Exercise
               </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/action/3.3">
+              <NavDropdown.Item as={Link} to="exercise/childrenExercise">
                 Children Exercise
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="exercise/yogaAsans">
+                Yoga Asans
               </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link as={Link} to="/nutrition" className="nav-item">

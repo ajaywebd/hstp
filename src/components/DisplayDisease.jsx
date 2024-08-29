@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
 import Male_Disease from "../data/Male_Disease.jsx"; // Importing the JSON data
 import Children_Disease from "../data/Children_Disease.jsx"; // Importing the JSON data
 import Female_Disease from "../data/Female_Disease.jsx"; // Importing the JSON data
-
-import { Link, useLocation } from "react-router-dom";
 import "./DisplayDisease.css"; // Import the CSS file for custom styling
 
 const DisplayDisease = () => {
   const location = useLocation();
   const { value, name } = location.state || {}; // Retrieve the passed value from state
   let selectedData;
+
+  // Determine which dataset to use based on the "name" value
   if (name === "female") {
     selectedData = Female_Disease.find((disease) => disease.id === value);
   } else if (name === "male") {
@@ -17,7 +18,6 @@ const DisplayDisease = () => {
   } else {
     selectedData = Children_Disease.find((disease) => disease.id === value);
   }
-  // Find the object where id === value
 
   // Render the content if the object with id === value exists
   return (
@@ -75,13 +75,29 @@ const DisplayDisease = () => {
               )}
             </div>
           ))}
+
+          {/* Conditional Back Button */}
+          {name === "male" && (
+            <Link to="/disease/maleDisease" className="btn btn-success mb-3">
+              Back to All Diseases
+            </Link>
+          )}
+          {name === "female" && (
+            <Link to="/disease/femaleDisease" className="btn btn-success mb-3">
+              Back to All Diseases
+            </Link>
+          )}
+          {name === "children" && (
+            <Link
+              to="/disease/childrenDisease"
+              className="btn btn-success mb-3">
+              Back to All Diseases
+            </Link>
+          )}
         </>
       ) : (
         <p>No data found for the selected ID.</p>
       )}
-      <Link to="/disease/maleDisease" className="btn btn-success mb-3">
-        Back to All Diseases
-      </Link>
     </div>
   );
 };

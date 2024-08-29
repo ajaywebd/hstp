@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Nutrition.css"; // Custom CSS file for additional styling
 import { Dropdown } from "react-bootstrap";
+import DisplayNutrition from "../components/DisplayNutrition";
 
 const Nutrition = () => {
   const [selectedBMI, setSelectedBMI] = useState("");
@@ -73,6 +74,7 @@ const Nutrition = () => {
           </div>
         </div>
       </section>
+      <DisplayNutrition selectedBMI={selectedBMI} />
     </>
   );
 };

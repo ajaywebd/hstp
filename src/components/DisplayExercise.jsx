@@ -1,9 +1,11 @@
 import React from "react";
+import "./DisplayDisease.css";
 import { Link, useLocation } from "react-router-dom";
 import Aerobic_Exercise from "../data/Aerobic_Exercise";
 import Children_Exercise from "../data/Children_Disease";
 import Pilate_Exercise from "../data/Pilate_Exercise";
 import Yoga_Asan from "../data/Yoga_Asan";
+import Get_Started_With_Smallpdf from "../pdf/Get_Started_With_Smallpdf.pdf";
 
 const DisplayExercise = () => {
   const location = useLocation();
@@ -23,7 +25,7 @@ const DisplayExercise = () => {
     <>
       <div className="container-fluid p-0 text-bg-info">
         <h1 className="text-center mt-2 text-bg-primary">
-          Aerobic Classes Overview
+          {selectedData ? selectedData.title : "Exercise Overview"}
         </h1>
         <div
           className="text-center d-flex flex-wrap align-items-center justify-content-center gap-4"
@@ -97,10 +99,23 @@ const DisplayExercise = () => {
                   </ul>
                 </div>
               ))}
+
+              <div>
+                <h3>Download PDF</h3>
+
+                <a
+                  href={Get_Started_With_Smallpdf} // Replace with the actual path to your PDF file
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary mt-2">
+                  Download PDF
+                </a>
+              </div>
             </div>
           ) : (
             <p>No data available for this exercise.</p>
           )}
+
           {name === "aerobic" && (
             <Link
               to="/exercise/aerobicExercise"

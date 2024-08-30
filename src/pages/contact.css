@@ -1,0 +1,56 @@
+.contact {
+  padding: 60px 0;
+}
+
+.contact h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.contact .info {
+  margin-bottom: 20px;
+}
+
+.contact .info h4 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.contact .info i {
+  font-size: 24px;
+  color: #3498db;
+  margin-right: 10px;
+}
+
+.contact .php-email-form {
+  width: 100%;
+}
+
+.contact .php-email-form input,
+.contact .php-email-form textarea {
+  border-radius: 4px;
+  padding: 10px;
+  border: 1px solid #d1d1d1;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact .php-email-form button[type="submit"] {
+  background: #007bff;
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.contact .php-email-form button[type="submit"]:hover {
+  background: #0056b3;
+}

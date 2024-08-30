@@ -16,6 +16,7 @@ import PilatesExcercise from "./pages/exercise/PilatesExcercise";
 import ChildrenExercise from "./pages/exercise/ChildrenExercise";
 import YogaAsans from "./pages/exercise/YogaAsans";
 import DisplayExercise from "./components/DisplayExercise";
+import DisplayNutrition from "./components/DisplayNutrition";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
         <Route path="/nutrition" element={<Nutrition />} />
         <Route path="/displayDisease" element={<DisplayDisease />} />
         <Route path="/displayExercise" element={<DisplayExercise />} />
+        <Route path="/displayBMI" element={<DisplayNutrition />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
       <Footer />

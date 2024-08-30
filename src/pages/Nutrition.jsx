@@ -1,14 +1,23 @@
 import React, { useState } from "react";
 import "./Nutrition.css"; // Custom CSS file for additional styling
 import { Dropdown } from "react-bootstrap";
-import DisplayNutrition from "../components/DisplayNutrition";
+import { Link } from "react-router-dom";
 
 const Nutrition = () => {
   const [selectedBMI, setSelectedBMI] = useState("");
+  const [selectedAge, setSelectedAge] = useState("");
+  const [selectedGender, setSelectedGender] = useState("");
 
   const handleSelect = (e) => {
     setSelectedBMI(e);
-    console.log("Selected BMI range:", e);
+  };
+
+  const handleSelectAge = (e) => {
+    setSelectedAge(e);
+  };
+
+  const clickHandler = (e) => {
+    setSelectedGender(e.target.value);
   };
 
   return (
@@ -62,6 +71,57 @@ const Nutrition = () => {
                     <Dropdown.Item eventKey="74">71 - 74</Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
+
+                <div>
+                  <span className="text-bg-light me-2">Gender:</span>
+                  <label htmlFor="gender-male" className="text-light me-2">
+                    Male
+                  </label>
+                  <input
+                    onClick={clickHandler}
+                    type="radio"
+                    name="gender"
+                    value="male"
+                    id="gender-male"
+                    className="me-3"
+                  />
+                  <label htmlFor="gender-female" className="text-light me-2">
+                    Female
+                  </label>
+                  <input
+                    onClick={clickHandler}
+                    type="radio"
+                    name="gender"
+                    value="female"
+                    id="gender-female"
+                  />
+                </div>
+
+                <Dropdown onSelect={handleSelectAge} className="w-100 mb-3">
+                  <Dropdown.Toggle
+                    variant="light"
+                    id="dropdown-basic"
+                    className="btn-lg w-100">
+                    Select Your Range of Age
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu className="w-100">
+                    <Dropdown.Item eventKey="16">13 - 16</Dropdown.Item>
+                    <Dropdown.Item eventKey="18">16 - 18</Dropdown.Item>
+                    <Dropdown.Item eventKey="22">19 - 22</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </div>
+              <Link
+                state={{ selectedAge, selectedBMI, selectedGender }} // Passing the selected values to another component
+                to="/displayBMI"
+                className="btn btn-success mb-3">
+                Get Nutrition
+              </Link>
+              <div className="text-bg-danger p-2 mt-3">
+                <p>Selected BMI: {selectedBMI}</p>
+                <p>Selected Age: {selectedAge}</p>
+                <p>Selected Gender: {selectedGender}</p>
               </div>
             </div>
             <div className="col-md-6 order-md-2 order-1 mb-4 mb-md-0">
@@ -74,7 +134,6 @@ const Nutrition = () => {
           </div>
         </div>
       </section>
-      <DisplayNutrition selectedBMI={selectedBMI} />
     </>
   );
 };

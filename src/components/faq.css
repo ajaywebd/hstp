@@ -1,0 +1,29 @@
+/* contact.css */
+.faq {
+  background-color: #f9f9f9;
+  padding: 40px 0;
+}
+
+.faq h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.accordion-button {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #0056b3;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-body {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}

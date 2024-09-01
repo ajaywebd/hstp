@@ -54,3 +54,19 @@
 .contact .php-email-form button[type="submit"]:hover {
   background: #0056b3;
 }
+.whatsapp-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: #25d366; /* WhatsApp green color */
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+}
+
+.whatsapp-icon:hover {
+  transform: scale(1.1);
+}

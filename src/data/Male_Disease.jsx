@@ -132,7 +132,7 @@ const Male_Disease = [
   },
 
   {
-    id: 6,
+    id: 5,
     title: "Home Remedies for Bloating in Men",
     description:
       "Bloating is a common digestive issue that can cause discomfort and a feeling of fullness or swelling in the abdomen. It can result from overeating, eating certain foods, or digestive disorders. Here are several home remedies to help alleviate bloating along with precautions to ensure their safe use.",

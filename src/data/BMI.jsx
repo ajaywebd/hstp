@@ -1,128 +1,428 @@
-const Male_Disease = [
+const BMI = [
   {
-    id: "3",
-    age: "16",
+    age: 3,
     gender: "male",
-    title: "Home Remedies for Abdominal Pain in Men",
-    description:
-      "Abdominal pain can be caused by a variety of factors including indigestion, gas, constipation, stomach infections, or more serious conditions. While some causes of abdominal pain may require medical attention, many mild cases can be managed at home with various remedies and supportive care. Here are some effective strategies along with precautions to ensure their safe use.",
-    remedies: [
-      {
-        name: "Ginger",
-        remedy:
-          "Drink ginger tea or chew on small pieces of fresh ginger. Ginger has natural anti-inflammatory and digestive properties that can help soothe abdominal pain.",
-        precaution:
-          "Consult your doctor before taking ginger supplements, especially if you have any medical conditions.",
+    bmi: 16,
+    diet: {
+      Breakfast: {
+        time_slot: "7:00 AM - 9:00 AM",
+        options: [
+          {
+            option: 1,
+            meal: "Suji (Semolina) Upma with Vegetables",
+            quantity: "1/2 cup suji upma with 1/4 cup mixed vegetables",
+            calories: 150,
+            carbohydrates: "25g",
+            proteins: "4g",
+            fats: "5g",
+          },
+          {
+            option: 2,
+            meal: "Banana Pancakes",
+            quantity: "2 small banana pancakes",
+            calories: 180,
+            carbohydrates: "30g",
+            proteins: "5g",
+            fats: "5g",
+          },
+          {
+            option: 3,
+            meal: "Vegetable Dalia",
+            quantity: "1/2 cup vegetable dalia",
+            calories: 160,
+            carbohydrates: "28g",
+            proteins: "4g",
+            fats: "4g",
+          },
+          {
+            option: 4,
+            meal: "Masala Oats",
+            quantity: "1/2 cup masala oats",
+            calories: 170,
+            carbohydrates: "27g",
+            proteins: "5g",
+            fats: "5g",
+          },
+        ],
       },
-      // ... Other remedies for Abdominal Pain
-    ],
-    preventive_measures: [
-      {
-        measure: "Eat Smaller, Frequent Meals",
-        description:
-          "Eating smaller meals more frequently can help prevent overeating and reduce the risk of abdominal pain.",
+      "Mid-Morning Snack": {
+        time_slot: "10:00 AM - 11:00 AM",
+        options: [
+          {
+            option: 1,
+            meal: "Apple Slices with Peanut Butter",
+            quantity: "1/2 small apple with 1 tbsp peanut butter",
+            calories: 100,
+            carbohydrates: "15g",
+            proteins: "2g",
+            fats: "5g",
+          },
+          {
+            option: 2,
+            meal: "Yogurt with Berries",
+            quantity: "1/2 cup yogurt with 1/4 cup mixed berries",
+            calories: 120,
+            carbohydrates: "18g",
+            proteins: "5g",
+            fats: "3g",
+          },
+          {
+            option: 3,
+            meal: "Carrot Sticks with Hummus",
+            quantity: "1/2 cup carrot sticks with 2 tbsp hummus",
+            calories: 100,
+            carbohydrates: "15g",
+            proteins: "3g",
+            fats: "4g",
+          },
+          {
+            option: 4,
+            meal: "Whole Wheat Crackers with Cheese",
+            quantity: "3 whole wheat crackers with 1 slice of cheese",
+            calories: 130,
+            carbohydrates: "15g",
+            proteins: "5g",
+            fats: "6g",
+          },
+        ],
       },
-      // ... Other preventive measures for Abdominal Pain
-    ],
-    notes: [
-      "Pain persists for more than a few days despite home treatment.",
-      "You experience severe or sharp abdominal pain.",
-      "You have symptoms such as high fever, vomiting, or signs of dehydration.",
-    ],
+      Lunch: {
+        time_slot: "12:30 PM - 1:30 PM",
+        options: [
+          {
+            option: 1,
+            meal: "Vegetable Khichdi",
+            quantity: "1/2 cup vegetable khichdi",
+            calories: 200,
+            carbohydrates: "35g",
+            proteins: "6g",
+            fats: "4g",
+          },
+          {
+            option: 2,
+            meal: "Roti with Dal",
+            quantity: "1 small whole wheat roti with 1/4 cup dal",
+            calories: 220,
+            carbohydrates: "35g",
+            proteins: "8g",
+            fats: "5g",
+          },
+          {
+            option: 3,
+            meal: "Rice with Chicken Curry",
+            quantity: "1/2 cup rice with 1/4 cup chicken curry",
+            calories: 250,
+            carbohydrates: "30g",
+            proteins: "12g",
+            fats: "8g",
+          },
+          {
+            option: 4,
+            meal: "Vegetable Pulao with Curd",
+            quantity: "1/2 cup vegetable pulao with 1/4 cup curd",
+            calories: 230,
+            carbohydrates: "35g",
+            proteins: "6g",
+            fats: "6g",
+          },
+        ],
+      },
+      "Evening Snack": {
+        time_slot: "4:00 PM - 5:00 PM",
+        options: [
+          {
+            option: 1,
+            meal: "Fruit Smoothie",
+            quantity: "1 cup fruit smoothie",
+            calories: 150,
+            carbohydrates: "30g",
+            proteins: "4g",
+            fats: "2g",
+          },
+          {
+            option: 2,
+            meal: "Boiled Egg",
+            quantity: "1 boiled egg",
+            calories: 70,
+            carbohydrates: "1g",
+            proteins: "6g",
+            fats: "5g",
+          },
+          {
+            option: 3,
+            meal: "Mini Vegetable Sandwich",
+            quantity: "1 mini vegetable sandwich",
+            calories: 120,
+            carbohydrates: "18g",
+            proteins: "4g",
+            fats: "3g",
+          },
+          {
+            option: 4,
+            meal: "Banana with Almonds",
+            quantity: "1 small banana with 5 almonds",
+            calories: 150,
+            carbohydrates: "25g",
+            proteins: "3g",
+            fats: "6g",
+          },
+        ],
+      },
+      Dinner: {
+        time_slot: "7:00 PM - 8:00 PM",
+        options: [
+          {
+            option: 1,
+            meal: "Moong Dal Chilla",
+            quantity: "1 small moong dal chilla",
+            calories: 180,
+            carbohydrates: "25g",
+            proteins: "8g",
+            fats: "5g",
+          },
+          {
+            option: 2,
+            meal: "Vegetable Soup with Whole Wheat Bread",
+            quantity: "1 cup vegetable soup with 1 slice whole wheat bread",
+            calories: 200,
+            carbohydrates: "30g",
+            proteins: "6g",
+            fats: "4g",
+          },
+          {
+            option: 3,
+            meal: "Rice with Mixed Vegetables",
+            quantity: "1/2 cup rice with 1/2 cup mixed vegetables",
+            calories: 220,
+            carbohydrates: "35g",
+            proteins: "5g",
+            fats: "5g",
+          },
+          {
+            option: 4,
+            meal: "Roti with Paneer Sabzi",
+            quantity: "1 small whole wheat roti with 1/4 cup paneer sabzi",
+            calories: 230,
+            carbohydrates: "25g",
+            proteins: "8g",
+            fats: "8g",
+          },
+        ],
+      },
+    },
   },
   {
-    id: "3",
-    age: "16",
+    age: 3,
     gender: "female",
-    title: "Home Remedies for Abdominal Pain in Women",
-    description:
-      "Abdominal pain can be caused by a variety of factors including indigestion, gas, constipation, stomach infections, or more serious conditions. While some causes of abdominal pain may require medical attention, many mild cases can be managed at home with various remedies and supportive care. Here are some effective strategies along with precautions to ensure their safe use.",
-    remedies: [
-      {
-        name: "Ginger",
-        remedy:
-          "Drink ginger tea or chew on small pieces of fresh ginger. Ginger has natural anti-inflammatory and digestive properties that can help soothe abdominal pain.",
-        precaution:
-          "Consult your doctor before taking ginger supplements, especially if you have any medical conditions.",
+    bmi: 16,
+    diet: {
+      Breakfast: {
+        time_slot: "7:00 AM - 9:00 AM",
+        options: [
+          {
+            option: 1,
+            meal: "Suji (Semolina) Upma with Vegetables",
+            quantity: "1/2 cup suji upma with 1/4 cup mixed vegetables",
+            calories: 150,
+            carbohydrates: "25g",
+            proteins: "4g",
+            fats: "5g",
+          },
+          {
+            option: 2,
+            meal: "Banana Pancakes",
+            quantity: "2 small banana pancakes",
+            calories: 180,
+            carbohydrates: "30g",
+            proteins: "5g",
+            fats: "5g",
+          },
+          {
+            option: 3,
+            meal: "Vegetable Dalia",
+            quantity: "1/2 cup vegetable dalia",
+            calories: 160,
+            carbohydrates: "28g",
+            proteins: "4g",
+            fats: "4g",
+          },
+          {
+            option: 4,
+            meal: "Masala Oats",
+            quantity: "1/2 cup masala oats",
+            calories: 170,
+            carbohydrates: "27g",
+            proteins: "5g",
+            fats: "5g",
+          },
+        ],
       },
-      // ... Other remedies for Abdominal Pain
-    ],
-    preventive_measures: [
-      {
-        measure: "Eat Smaller, Frequent Meals",
-        description:
-          "Eating smaller meals more frequently can help prevent overeating and reduce the risk of abdominal pain.",
+      "Mid-Morning Snack": {
+        time_slot: "10:00 AM - 11:00 AM",
+        options: [
+          {
+            option: 1,
+            meal: "Apple Slices with Peanut Butter",
+            quantity: "1/2 small apple with 1 tbsp peanut butter",
+            calories: 100,
+            carbohydrates: "15g",
+            proteins: "2g",
+            fats: "5g",
+          },
+          {
+            option: 2,
+            meal: "Yogurt with Berries",
+            quantity: "1/2 cup yogurt with 1/4 cup mixed berries",
+            calories: 120,
+            carbohydrates: "18g",
+            proteins: "5g",
+            fats: "3g",
+          },
+          {
+            option: 3,
+            meal: "Carrot Sticks with Hummus",
+            quantity: "1/2 cup carrot sticks with 2 tbsp hummus",
+            calories: 100,
+            carbohydrates: "15g",
+            proteins: "3g",
+            fats: "4g",
+          },
+          {
+            option: 4,
+            meal: "Whole Wheat Crackers with Cheese",
+            quantity: "3 whole wheat crackers with 1 slice of cheese",
+            calories: 130,
+            carbohydrates: "15g",
+            proteins: "5g",
+            fats: "6g",
+          },
+        ],
       },
-      // ... Other preventive measures for Abdominal Pain
-    ],
-    notes: [
-      "Pain persists for more than a few days despite home treatment.",
-      "You experience severe or sharp abdominal pain.",
-      "You have symptoms such as high fever, vomiting, or signs of dehydration.",
-    ],
-  },
-  {
-    id: "3",
-    age: "18",
-    gender: "male",
-    title: "Home Remedies for Abdominal Pain in Men",
-    description:
-      "Abdominal pain can be caused by a variety of factors including indigestion, gas, constipation, stomach infections, or more serious conditions. While some causes of abdominal pain may require medical attention, many mild cases can be managed at home with various remedies and supportive care. Here are some effective strategies along with precautions to ensure their safe use.",
-    remedies: [
-      {
-        name: "Ginger",
-        remedy:
-          "Drink ginger tea or chew on small pieces of fresh ginger. Ginger has natural anti-inflammatory and digestive properties that can help soothe abdominal pain.",
-        precaution:
-          "Consult your doctor before taking ginger supplements, especially if you have any medical conditions.",
+      Lunch: {
+        time_slot: "12:30 PM - 1:30 PM",
+        options: [
+          {
+            option: 1,
+            meal: "Vegetable Khichdi",
+            quantity: "1/2 cup vegetable khichdi",
+            calories: 200,
+            carbohydrates: "35g",
+            proteins: "6g",
+            fats: "4g",
+          },
+          {
+            option: 2,
+            meal: "Roti with Dal",
+            quantity: "1 small whole wheat roti with 1/4 cup dal",
+            calories: 220,
+            carbohydrates: "35g",
+            proteins: "8g",
+            fats: "5g",
+          },
+          {
+            option: 3,
+            meal: "Rice with Chicken Curry",
+            quantity: "1/2 cup rice with 1/4 cup chicken curry",
+            calories: 250,
+            carbohydrates: "30g",
+            proteins: "12g",
+            fats: "8g",
+          },
+          {
+            option: 4,
+            meal: "Vegetable Pulao with Curd",
+            quantity: "1/2 cup vegetable pulao with 1/4 cup curd",
+            calories: 230,
+            carbohydrates: "35g",
+            proteins: "6g",
+            fats: "6g",
+          },
+        ],
       },
-      // ... Other remedies for Abdominal Pain
-    ],
-    preventive_measures: [
-      {
-        measure: "Eat Smaller, Frequent Meals",
-        description:
-          "Eating smaller meals more frequently can help prevent overeating and reduce the risk of abdominal pain.",
+      "Evening Snack": {
+        time_slot: "4:00 PM - 5:00 PM",
+        options: [
+          {
+            option: 1,
+            meal: "Fruit Smoothie",
+            quantity: "1 cup fruit smoothie",
+            calories: 150,
+            carbohydrates: "30g",
+            proteins: "4g",
+            fats: "2g",
+          },
+          {
+            option: 2,
+            meal: "Boiled Egg",
+            quantity: "1 boiled egg",
+            calories: 70,
+            carbohydrates: "1g",
+            proteins: "6g",
+            fats: "5g",
+          },
+          {
+            option: 3,
+            meal: "Mini Vegetable Sandwich",
+            quantity: "1 mini vegetable sandwich",
+            calories: 120,
+            carbohydrates: "18g",
+            proteins: "4g",
+            fats: "3g",
+          },
+          {
+            option: 4,
+            meal: "Banana with Almonds",
+            quantity: "1 small banana with 5 almonds",
+            calories: 150,
+            carbohydrates: "25g",
+            proteins: "3g",
+            fats: "6g",
+          },
+        ],
       },
-      // ... Other preventive measures for Abdominal Pain
-    ],
-    notes: [
-      "Pain persists for more than a few days despite home treatment.",
-      "You experience severe or sharp abdominal pain.",
-      "You have symptoms such as high fever, vomiting, or signs of dehydration.",
-    ],
-  },
-  {
-    id: "3",
-    age: "18",
-    gender: "female",
-    title: "Home Remedies for Abdominal Pain in Women 18",
-    description:
-      "Abdominal pain can be caused by a variety of factors including indigestion, gas, constipation, stomach infections, or more serious conditions. While some causes of abdominal pain may require medical attention, many mild cases can be managed at home with various remedies and supportive care. Here are some effective strategies along with precautions to ensure their safe use.",
-    remedies: [
-      {
-        name: "Ginger",
-        remedy:
-          "Drink ginger tea or chew on small pieces of fresh ginger. Ginger has natural anti-inflammatory and digestive properties that can help soothe abdominal pain.",
-        precaution:
-          "Consult your doctor before taking ginger supplements, especially if you have any medical conditions.",
+      Dinner: {
+        time_slot: "7:00 PM - 8:00 PM",
+        options: [
+          {
+            option: 1,
+            meal: "Moong Dal Chilla",
+            quantity: "1 small moong dal chilla",
+            calories: 180,
+            carbohydrates: "25g",
+            proteins: "8g",
+            fats: "5g",
+          },
+          {
+            option: 2,
+            meal: "Vegetable Soup with Whole Wheat Bread",
+            quantity: "1 cup vegetable soup with 1 slice whole wheat bread",
+            calories: 200,
+            carbohydrates: "30g",
+            proteins: "6g",
+            fats: "4g",
+          },
+          {
+            option: 3,
+            meal: "Rice with Mixed Vegetables",
+            quantity: "1/2 cup rice with 1/2 cup mixed vegetables",
+            calories: 220,
+            carbohydrates: "35g",
+            proteins: "5g",
+            fats: "5g",
+          },
+          {
+            option: 4,
+            meal: "Roti with Paneer Sabzi",
+            quantity: "1 small whole wheat roti with 1/4 cup paneer sabzi",
+            calories: 230,
+            carbohydrates: "25g",
+            proteins: "8g",
+            fats: "8g",
+          },
+        ],
       },
-      // ... Other remedies for Abdominal Pain
-    ],
-    preventive_measures: [
-      {
-        measure: "Eat Smaller, Frequent Meals",
-        description:
-          "Eating smaller meals more frequently can help prevent overeating and reduce the risk of abdominal pain.",
-      },
-      // ... Other preventive measures for Abdominal Pain
-    ],
-    notes: [
-      "Pain persists for more than a few days despite home treatment.",
-      "You experience severe or sharp abdominal pain.",
-      "You have symptoms such as high fever, vomiting, or signs of dehydration.",
-    ],
+    },
   },
 ];
 
-export default Male_Disease;
+export default BMI;

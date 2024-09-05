@@ -1,89 +1,90 @@
 import React from "react";
-
-import "./DisplayDisease.css";
-import BMI from "../data/BMI"; // Importing the JSON data
-import { useLocation, Link } from "react-router-dom";
+import "./DisplayNutrition.css"; // Assuming this file contains custom styles
+import { Link, useLocation } from "react-router-dom";
+import bmiData from "../data/BMI.jsx";
 
 const DisplayNutrition = () => {
   const location = useLocation();
   const { selectedAge, selectedBMI, selectedGender } = location.state || {};
 
   // Find the unique data that matches selectedAge, selectedBMI, and selectedGender
-  const selectedData = BMI.find(
+  const selectedData = bmiData.find(
     (data) =>
-      data.age === selectedAge &&
-      data.id === selectedBMI &&
-      data.gender === selectedGender
+      data.age == selectedAge && // Match for age
+      data.bmi == selectedBMI && // Match for BMI
+      data.gender == selectedGender // Match for gender
   );
+
+  console.log(selectedAge, selectedBMI, selectedGender);
+  console.log(selectedData);
 
   return (
     <>
-      <div className="container-fluid p-0 text-bg-info">
-        <h1 className="text-center mt-2 text-bg-primary">
-          {selectedData ? selectedData.title : "Nutrition Overview"}
-        </h1>
-        <div
-          className="text-center d-flex flex-wrap align-items-center justify-content-center gap-4"
-          style={{
-            maxHeight: "90vh",
-            overflowY: "auto",
-            padding: "1rem",
-          }}>
-          {selectedData ? (
-            <div className="text-left text-white">
-              <h2>{selectedData.title}</h2>
-              <p>{selectedData.description}</p>
+      <div className="container-fluid disease-container">
+        {selectedData ? (
+          <>
+            {/* Display Title */}
+            <h1 className="text-center disease-title mb-4">
+              Nutrition Plan for a {selectedAge}-year-old {selectedGender}
+            </h1>
 
-              <h3>Remedies:</h3>
-              {selectedData.remedies && selectedData.remedies.length > 0 ? (
-                <ul>
-                  {selectedData.remedies.map((remedy, index) => (
-                    <li key={index}>
-                      <h4>{remedy.name}</h4>
-                      <p>
-                        <strong>Remedy:</strong> {remedy.remedy}
-                      </p>
-                      <p>
-                        <strong>Precaution:</strong> {remedy.precaution}
-                      </p>
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <p>No remedies available.</p>
-              )}
+            {/* Iterate through each meal type (breakfast, lunch, etc.) */}
+            {Object.keys(selectedData.diet).map((mealType, index) => (
+              <div key={index} className="meal-section mb-5">
+                {/* Display meal type (Breakfast, Lunch, etc.) */}
+                <h3 className="section-title text-primary">{mealType}</h3>
 
-              <h3>Preventive Measures:</h3>
-              {selectedData.preventive_measures &&
-              selectedData.preventive_measures.length > 0 ? (
-                <ul>
-                  {selectedData.preventive_measures.map((measure, index) => (
-                    <li key={index}>
-                      <strong>{measure.measure}:</strong> {measure.description}
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <p>No preventive measures available.</p>
-              )}
+                {/* Display time slot */}
+                <p className="meal-time text-muted">
+                  Time: {selectedData.diet[mealType].time_slot}
+                </p>
 
-              <h3>Notes:</h3>
-              {selectedData.notes && selectedData.notes.length > 0 ? (
-                <ul>
-                  {selectedData.notes.map((note, index) => (
-                    <li key={index}>{note}</li>
-                  ))}
-                </ul>
-              ) : (
-                <p>No notes available.</p>
-              )}
-            </div>
-          ) : (
-            <p>No data available for this selection.</p>
-          )}
-
-          <Link to="/nutrition" className="btn btn-success mt-4">
-            Back to All Nutrition Options
+                {/* Iterate through meal options */}
+                <div className="row">
+                  {selectedData.diet[mealType].options.map(
+                    (option, optionIndex) => (
+                      <div
+                        key={optionIndex}
+                        className="col-lg-4 col-md-6 col-sm-12 meal-option mb-4">
+                        <div className="card h-100">
+                          <div className="card-body">
+                            <h4 className="card-title">
+                              Option {option.option}
+                            </h4>
+                            <p className="card-text">
+                              <strong>Meal:</strong> {option.meal}
+                            </p>
+                            <p className="card-text">
+                              <strong>Quantity:</strong> {option.quantity}
+                            </p>
+                            <p className="card-text">
+                              <strong>Calories:</strong> {option.calories} kcal
+                            </p>
+                            <p className="card-text">
+                              <strong>Carbohydrates:</strong>{" "}
+                              {option.carbohydrates}
+                            </p>
+                            <p className="card-text">
+                              <strong>Proteins:</strong> {option.proteins}
+                            </p>
+                            <p className="card-text">
+                              <strong>Fats:</strong> {option.fats}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  )}
+                </div>
+              </div>
+            ))}
+          </>
+        ) : (
+          <p>No data available for this selection.</p>
+        )}
+        <div className="text-center">
+          <Link to="/nutrition" className="btn btn-primary mt-4">
+            Back to Nutrition
           </Link>
         </div>
       </div>

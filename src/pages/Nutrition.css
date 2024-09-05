@@ -52,6 +52,13 @@ h3 {
   margin-bottom: 10px;
 }
 
+/* Dropdown menu styling with scrollbars */
+.dropdown-menu {
+  max-height: 200px; /* Set max height for scroll */
+  overflow-y: auto; /* Enable vertical scrolling */
+  border: 1px solid #ddd; /* Optional: Add border for better visibility */
+}
+
 /* Button centering below the form and selected data */
 .row.justify-content-center {
   margin-top: 50px;

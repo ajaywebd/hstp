@@ -8,17 +8,49 @@ const Nutrition = () => {
   const [selectedAge, setSelectedAge] = useState("");
   const [selectedGender, setSelectedGender] = useState("");
 
-  const handleSelect = (e) => {
-    setSelectedBMI(e);
-  };
+  // Age and BMI options arrays
+  const ageOptions = [
+    { eventKey: "3", label: "0-3" },
+    { eventKey: "6", label: "3-6" },
+    { eventKey: "9", label: "6-9" },
+    { eventKey: "12", label: "9-12" },
+    { eventKey: "15", label: "12-15" },
+    { eventKey: "18", label: "15-18" },
+    { eventKey: "21", label: "18-21" },
+    { eventKey: "24", label: "21-24" },
+    { eventKey: "27", label: "24-27" },
+    { eventKey: "30", label: "27-30" },
+    { eventKey: "33", label: "30-33" },
+    { eventKey: "36", label: "33-36" },
+    { eventKey: "39", label: "36-39" },
+    { eventKey: "42", label: "39-42" },
+    { eventKey: "45", label: "42-45" },
+    { eventKey: "48", label: "45-48" },
+    { eventKey: "51", label: "48-51" },
+    { eventKey: "54", label: "51-54" },
+    { eventKey: "57", label: "54-57" },
+    { eventKey: "60", label: "57-60" },
+    { eventKey: "63", label: "60-63" },
+    { eventKey: "66", label: "63-66" },
+    { eventKey: "69", label: "66-69" },
+    { eventKey: "72", label: "69-72" },
+    { eventKey: "75", label: "72-75" },
+  ];
 
-  const handleSelectAge = (e) => {
-    setSelectedAge(e);
-  };
+  const bmiOptions = [
+    { eventKey: "16", label: "14-16" },
+    { eventKey: "18", label: "16-18" },
+    { eventKey: "20", label: "18-20" },
+    { eventKey: "22", label: "20-22" },
+    { eventKey: "24", label: "22-24" },
+    { eventKey: "26", label: "24-26" },
+    { eventKey: "28", label: "26-28" },
+    { eventKey: "30", label: "28-30" },
+  ];
 
-  const clickHandler = (e) => {
-    setSelectedGender(e.target.value);
-  };
+  const handleSelect = (e) => setSelectedBMI(e);
+  const handleSelectAge = (e) => setSelectedAge(e);
+  const clickHandler = (e) => setSelectedGender(e.target.value);
 
   return (
     <>
@@ -59,9 +91,13 @@ const Nutrition = () => {
                       Select Your Range of Age
                     </Dropdown.Toggle>
                     <Dropdown.Menu className="w-100">
-                      <Dropdown.Item eventKey="3">0-3</Dropdown.Item>
-                      <Dropdown.Item eventKey="6">3-6</Dropdown.Item>
-                      {/* Add other Age options */}
+                      {ageOptions.map((option) => (
+                        <Dropdown.Item
+                          eventKey={option.eventKey}
+                          key={option.eventKey}>
+                          {option.label}
+                        </Dropdown.Item>
+                      ))}
                     </Dropdown.Menu>
                   </Dropdown>
                 </div>
@@ -75,8 +111,13 @@ const Nutrition = () => {
                       Select Your Range of BMI
                     </Dropdown.Toggle>
                     <Dropdown.Menu className="w-100">
-                      <Dropdown.Item eventKey="16">13-16</Dropdown.Item>
-                      {/* Add other BMI options */}
+                      {bmiOptions.map((option) => (
+                        <Dropdown.Item
+                          eventKey={option.eventKey}
+                          key={option.eventKey}>
+                          {option.label}
+                        </Dropdown.Item>
+                      ))}
                     </Dropdown.Menu>
                   </Dropdown>
                 </div>

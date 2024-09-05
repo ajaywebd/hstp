@@ -44,11 +44,6 @@ const CarouselSlider = () => {
           />
         </Carousel.Item>
       </Carousel>
-      <div className="txtStyle">
-        {/* <>Total Health care solution</
-        p> */}
-        {/* <h1>Your most trusted health partner</h1> */}
-      </div>
     </div>
   );
 };

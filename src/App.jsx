@@ -18,10 +18,12 @@ import YogaAsans from "./pages/exercise/YogaAsans";
 import DisplayExercise from "./components/DisplayExercise";
 import DisplayNutrition from "./components/DisplayNutrition";
 import CalculateBMI from "./components/CalculateBMI";
+import TopHeader from "./components/TopHeader";
 
 function App() {
   return (
     <Router>
+      <TopHeader />
       <NavigationBar />
       <Routes>
         <Route path="/" element={<Home />} />

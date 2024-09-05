@@ -12,35 +12,6 @@
   opacity: 0.9;
 }
 
-@media (max-width: 768px) {
-  .carousel-container {
-    height: 30vh; /* Reduce the height for smaller screens */
-    overflow: hidden;
-    margin-bottom: -45px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1200px) {
-  .carousel-container {
-    height: 50vh; /* Adjust height for medium-sized devices */
-    overflow: hidden;
-    margin-bottom: -45px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1200px) {
-  .carousel-container {
-    height: 50vh; /* Adjust height for medium-sized devices */
-    overflow: hidden;
-    margin-bottom: -45px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .carousel-container {
-    height: 75vh; /* Maintain a larger height for larger displays */
-  }
-}
 /* =====================> */
 /* Extra small devices (phones, less than 576px) */
 @media (max-width: 576px) {

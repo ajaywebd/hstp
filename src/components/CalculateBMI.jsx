@@ -46,7 +46,8 @@ const CalculateBMI = () => {
   };
 
   return (
-    <div className="bmi-calculator mt-3">
+    <div className="bmi-calculator">
+      {/* Left Side: Form */}
       <div className="bmi-form">
         <Tabs
           id="unit-tabs"
@@ -120,7 +121,7 @@ const CalculateBMI = () => {
         </Tabs>
 
         {bmi && (
-          <div className="result text-center">
+          <div className="bmi-result text-center">
             <h4>Your BMI:</h4>
             <p>
               {bmi} kg/m<sup>2</sup>
@@ -132,7 +133,8 @@ const CalculateBMI = () => {
         )}
       </div>
 
-      <div className="bmi-categories mt-4">
+      {/* Right Side: BMI Categories and Health Tips */}
+      <div className="bmi-categories">
         <h5>BMI Categories:</h5>
         <ul>
           <li>Underweight: Less than 18.5</li>

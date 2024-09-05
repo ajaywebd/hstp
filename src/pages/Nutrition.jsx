@@ -24,47 +24,59 @@ const Nutrition = () => {
     <>
       <section
         id="nutrition-hero"
-        className="d-flex align-items-center bg-light py-5 position-relative">
+        className="d-flex align-items-center justify-content-center bg-light py-5">
         <div className="container">
-          <div className="row align-items-center justify-content-center">
-            <div className="col-lg-8 col-md-10 d-flex flex-column justify-content-center order-md-1 order-2">
-              <h1 className="text-dark text-center mb-4">
+          {/* Calculate BMI button at top left */}
+          <div className="calculate-bmi-button">
+            <Link to="/calculateBMI" className="btn btn-danger">
+              Calculate BMI
+            </Link>
+          </div>
+
+          {/* Centered heading and paragraph */}
+          <div className="row justify-content-center text-center mb-5">
+            <div className="col-12">
+              <h1 className="text-dark">
                 The Most Valuable Thing is Your Health
               </h1>
-              <p className="text-dark text-center mb-4">
+              <p className="text-dark">
                 Far far away, behind the word mountains, far from the countries
-                Vokalia and Consonantia, there live the blind texts. Separated
-                they live in Bookmarksgrove.
+                Vokalia and Consonantia, there live the blind texts.
               </p>
+            </div>
+          </div>
 
+          <div className="row justify-content-between">
+            {/* Left side: Data collection form */}
+            <div className="col-lg-5 col-md-6 col-12 mb-4">
               <div className="row mb-3">
-                <div className="col-md-6 mb-3 mb-md-0">
-                  <Dropdown onSelect={handleSelect}>
-                    <Dropdown.Toggle
-                      variant="light"
-                      id="dropdown-bmi"
-                      className="btn-lg w-100">
-                      Select Your Range of Age
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu className="w-100">
-                      <Dropdown.Item eventKey="3">0-3</Dropdown.Item>
-                      <Dropdown.Item eventKey="3">3-6</Dropdown.Item>
-                      {/* Add other BMI options here */}
-                    </Dropdown.Menu>
-                  </Dropdown>
-                </div>
-
-                <div className="col-md-6">
+                <div className="col-md-12">
                   <Dropdown onSelect={handleSelectAge}>
                     <Dropdown.Toggle
                       variant="light"
                       id="dropdown-age"
                       className="btn-lg w-100">
+                      Select Your Range of Age
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu className="w-100">
+                      <Dropdown.Item eventKey="3">0-3</Dropdown.Item>
+                      <Dropdown.Item eventKey="6">3-6</Dropdown.Item>
+                      {/* Add other Age options */}
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </div>
+
+                <div className="col-md-12 mt-3">
+                  <Dropdown onSelect={handleSelect}>
+                    <Dropdown.Toggle
+                      variant="light"
+                      id="dropdown-bmi"
+                      className="btn-lg w-100">
                       Select Your Range of BMI
                     </Dropdown.Toggle>
                     <Dropdown.Menu className="w-100">
-                      <Dropdown.Item eventKey="16">13 - 16</Dropdown.Item>
-                      {/* Add other Age options here */}
+                      <Dropdown.Item eventKey="16">13-16</Dropdown.Item>
+                      {/* Add other BMI options */}
                     </Dropdown.Menu>
                   </Dropdown>
                 </div>
@@ -105,29 +117,26 @@ const Nutrition = () => {
                   </div>
                 </div>
               </div>
+            </div>
 
-              <div className="row">
-                <div className="col-12">
-                  <Link
-                    state={{ selectedAge, selectedBMI, selectedGender }} // Passing the selected values to another component
-                    to="/displayBMI"
-                    className="btn btn-success w-100 btn-lg">
-                    Get Nutrition
-                  </Link>
-                </div>
-              </div>
+            {/* Right side: Display selected data */}
+            <div className="col-lg-5 col-md-6 col-12 d-flex flex-column justify-content-center align-items-start mb-4">
+              <h3>Selected Data</h3>
+              <p className="mb-1">Selected Age: {selectedAge}</p>
+              <p className="mb-1">Selected BMI: {selectedBMI}</p>
+              <p className="mb-1">Selected Gender: {selectedGender}</p>
+            </div>
+          </div>
 
-              <div className="text-bg-danger p-2 mt-3 text-center rounded">
-                <p className="mb-1">Selected BMI: {selectedBMI}</p>
-                <p className="mb-1">Selected Age: {selectedAge}</p>
-                <p className="mb-0">Selected Gender: {selectedGender}</p>
-              </div>
-
-              <div className="calculateBMI">
-                <Link to="/calculateBMI" className="btn btn-success ms-2">
-                  Calculate BMI
-                </Link>
-              </div>
+          {/* Button centered below */}
+          <div className="row justify-content-center mt-5">
+            <div className="col-lg-4 col-md-6 col-8 text-center">
+              <Link
+                state={{ selectedAge, selectedBMI, selectedGender }}
+                to="/displayBMI"
+                className="btn btn-success btn-lg w-100">
+                Get Nutrition
+              </Link>
             </div>
           </div>
         </div>

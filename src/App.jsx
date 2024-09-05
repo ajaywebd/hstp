@@ -17,6 +17,7 @@ import ChildrenExercise from "./pages/exercise/ChildrenExercise";
 import YogaAsans from "./pages/exercise/YogaAsans";
 import DisplayExercise from "./components/DisplayExercise";
 import DisplayNutrition from "./components/DisplayNutrition";
+import CalculateBMI from "./components/CalculateBMI";
 
 function App() {
   return (
@@ -39,6 +40,8 @@ function App() {
         <Route path="/displayDisease" element={<DisplayDisease />} />
         <Route path="/displayExercise" element={<DisplayExercise />} />
         <Route path="/displayBMI" element={<DisplayNutrition />} />
+        <Route path="/nutrition" element={<Nutrition />} />
+        <Route path="/calculateBMI" element={<CalculateBMI />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
       <Footer />

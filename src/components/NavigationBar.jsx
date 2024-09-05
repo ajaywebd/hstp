@@ -51,6 +51,9 @@ const NavigationBar = () => {
             <Nav.Link as={Link} to="/nutrition" className="nav-item">
               Nutritions
             </Nav.Link>
+            <Nav.Link as={Link} to="/calculateBMI" className="nav-item">
+              Calculate BMI
+            </Nav.Link>
             <Nav.Link as={Link} to="/contact" className="nav-item">
               Contact
             </Nav.Link>

@@ -1,0 +1,92 @@
+.bmi-calculator {
+  border: 3px solid #8c53a1;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f9f6f9;
+  width: 600px; /* Increased width to accommodate the additional content */
+  margin: 0 auto;
+}
+
+.bmi-calculator h4 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.bmi-calculator .result {
+  border: 2px solid #8c53a1;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.bmi-categories ul {
+  list-style: none;
+  padding: 0;
+}
+
+.bmi-categories li {
+  font-size: 14px;
+}
+
+.calculate-btn {
+  background-color: #8c53a1;
+  border: none;
+}
+
+.calculate-btn:hover {
+  background-color: #703d85;
+}
+
+.bmi-calculator .form-label {
+  font-size: 14px;
+}
+
+.bmi-calculator input[type="number"] {
+  border: 2px solid #8c53a1;
+  border-radius: 5px;
+}
+
+.result p {
+  font-size: 16px;
+  font-weight: bold;
+  color: #8c53a1;
+}
+
+.result h4 {
+  color: #8c53a1;
+  font-size: 22px;
+}
+
+/* Adjusted layout for form and categories */
+.bmi-calculator {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bmi-form {
+  flex: 0.6; /* Adjusted to give more space to the form */
+  padding-right: 20px;
+}
+
+.bmi-categories {
+  flex: 0.4; /* Adjusted width to make the categories container wider */
+  border-left: 1px solid #ccc;
+  padding-left: 20px;
+}
+
+.bmi-next-steps {
+  margin-top: 20px;
+}
+
+.bmi-next-steps h5 {
+  margin-bottom: 10px;
+}
+
+.bmi-next-steps ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.bmi-next-steps li {
+  margin-bottom: 10px;
+}

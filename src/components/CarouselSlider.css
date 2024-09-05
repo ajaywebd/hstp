@@ -14,13 +14,25 @@
 
 @media (max-width: 768px) {
   .carousel-container {
-    height: 50vh; /* Reduce the height for smaller screens */
+    height: 30vh; /* Reduce the height for smaller screens */
+    overflow: hidden;
+    margin-bottom: -45px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1200px) {
   .carousel-container {
-    height: 65vh; /* Adjust height for medium-sized devices */
+    height: 50vh; /* Adjust height for medium-sized devices */
+    overflow: hidden;
+    margin-bottom: -45px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .carousel-container {
+    height: 50vh; /* Adjust height for medium-sized devices */
+    overflow: hidden;
+    margin-bottom: -45px;
   }
 }
 
@@ -28,4 +40,59 @@
   .carousel-container {
     height: 75vh; /* Maintain a larger height for larger displays */
   }
+}
+/* =====================> */
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 576px) {
+  /* Your CSS here for extra small devices */
+  .carousel-container {
+    height: 30vh; /* Reduce the height for smaller screens */
+    overflow: hidden;
+    margin-bottom: -45px;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  /* Your CSS here for small devices */
+  .carousel-container {
+    height: 40vh; /* Reduce the height for smaller screens */
+    overflow: hidden;
+    margin-bottom: -45px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  /* Your CSS here for medium devices */
+  .carousel-container {
+    height: 50vh; /* Reduce the height for smaller screens */
+    overflow: hidden;
+    margin-bottom: -45px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  /* Your CSS here for large devices */
+  .carousel-container {
+    height: 60vh; /* Reduce the height for smaller screens */
+    overflow: hidden;
+    margin-bottom: -45px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  /* Your CSS here for extra large devices */
+  .carousel-container {
+    height: 75vh; /* Reduce the height for smaller screens */
+    overflow: hidden;
+    margin-bottom: -45px;
+  }
+}
+
+/* XXL devices (very large desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  /* Your CSS here for extra large screens */
 }

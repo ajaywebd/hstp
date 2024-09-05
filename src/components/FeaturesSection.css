@@ -1,0 +1,92 @@
+/* Full width background and padding for the entire section */
+.features-section {
+  background-color: #f8f9fa; /* Light grey background */
+  padding: 40px 20px; /* Add padding for better spacing */
+}
+
+/* Default style for cards */
+.feature-card {
+  padding: 20px;
+  border: 1px solid #007bff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 300px;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Style for FontAwesome icon */
+.icon-color {
+  color: #007bff;
+  font-size: 3em; /* Default size for icons */
+}
+
+/* Heading and text size */
+.feature-card h5 {
+  font-size: 1.25em; /* Default heading size */
+}
+
+.feature-card p {
+  font-size: 1em; /* Default paragraph size */
+}
+
+/* Responsive layout for different screen sizes */
+.features-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Show 1 card per row on mobile devices */
+@media (max-width: 576px) {
+  .features-row > .col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .features-section {
+    background-color: #f8f9fa; /* Light grey background */
+    padding: 40px 20px; /* Add padding for better spacing */
+    margin-top: -100px;
+  }
+}
+
+/* Show 2 cards per row on tablets (both small and medium devices), and make the cards, text, and icons bigger */
+@media (min-width: 577px) and (max-width: 992px) {
+  .features-row > .col {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  /* Increase card size */
+  .feature-card {
+    padding: 30px; /* Increase padding for larger card */
+    max-width: 350px; /* Increase max width */
+  }
+
+  /* Increase icon size */
+  .icon-color {
+    font-size: 4em; /* Larger icons on tablet */
+  }
+
+  /* Increase heading and text size */
+  .feature-card h5 {
+    font-size: 1.5em; /* Larger heading */
+  }
+
+  .feature-card p {
+    font-size: 1.1em; /* Larger paragraph text */
+  }
+  .features-section {
+    background-color: #f8f9fa; /* Light grey background */
+    padding: 40px 20px; /* Add padding for better spacing */
+    margin-top: -500px;
+  }
+}
+
+/* Show all 4 cards per row on large devices */
+@media (min-width: 993px) {
+  .features-row > .col {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}

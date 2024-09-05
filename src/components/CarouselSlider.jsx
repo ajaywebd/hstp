@@ -5,7 +5,7 @@ import "./CarouselSlider.css"; // Import the custom CSS file
 
 const CarouselSlider = () => {
   return (
-    <div className="txtContainer">
+    <div className="txtContainer txtContainer1">
       <Carousel interval={2000} className="carousel-container">
         {/* Change interval to 2 seconds */}
         <Carousel.Item>

@@ -118,9 +118,6 @@ const ServicesSection = () => {
             </Card>
           </Col>
         </Row>
-        <div className="text-center mt-4">
-          <Button variant="outline-primary">Contact Us</Button>
-        </div>
       </Container>
     </div>
   );

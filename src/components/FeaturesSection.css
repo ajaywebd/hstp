@@ -1,137 +1,37 @@
-/* Full width background and padding for the entire section */
 .features-section {
-  background-color: #f8f9fa; /* Light grey background */
-  padding: 40px 20px; /* Add padding for better spacing */
+  padding: 2rem 1rem;
 }
 
-/* Default style for cards */
 .feature-card {
-  padding: 20px;
-  border: 1px solid #007bff;
+  background-color: #fff;
+  padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
   max-width: 300px;
-  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  text-align: center;
 }
 
-/* Style for FontAwesome icon */
 .icon-color {
-  color: #007bff;
-  font-size: 3em; /* Default size for icons */
+  color: #007bff; /* Adjust icon color to your branding */
 }
 
-/* Heading and text size */
-.feature-card h5 {
-  font-size: 1.25em; /* Default heading size */
-}
-
-.feature-card p {
-  font-size: 1em; /* Default paragraph size */
-}
-
-/* Responsive layout for different screen sizes */
-.features-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-/* Carousel container styling for mobile screens */
-.carousel-container {
-  height: 30vh; /* Reduce the height for smaller screens */
-  overflow: hidden;
-  margin-bottom: -45px;
-}
-
-/* Show 1 card per row on mobile devices and increase the size */
 @media (max-width: 576px) {
-  .features-row > .col {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-
-  /* Increase card size on mobile */
+  /* On extra small devices (phones), stack the feature cards vertically */
   .feature-card {
-    padding: 25px; /* Increase padding */
-    max-width: 350px; /* Slightly larger cards */
-  }
-
-  /* Increase icon size */
-  .icon-color {
-    font-size: 4em; /* Larger icons on mobile */
-  }
-
-  /* Increase heading and text size */
-  .feature-card h5 {
-    font-size: 1.4em; /* Larger heading */
-  }
-
-  .feature-card p {
-    font-size: 1.1em; /* Larger paragraph text */
-  }
-
-  .features-section {
-    padding: 40px 20px; /* Ensure sufficient padding */
-    margin-top: -100px; /* Adjust margin to fix layout */
+    max-width: 100%; /* Allow full width on small screens */
   }
 }
 
-/* Show 2 cards per row on tablets (both small and medium devices), and make the cards, text, and icons bigger */
-@media (min-width: 577px) and (max-width: 992px) {
-  .features-row > .col {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-
-  /* Increase card size on tablets */
+@media (min-width: 768px) {
+  /* On tablets and larger, use flexbox for alignment */
   .feature-card {
-    padding: 30px; /* Increase padding */
-    max-width: 400px; /* Increase max width for larger cards */
-  }
-
-  /* Increase icon size */
-  .icon-color {
-    font-size: 4.5em; /* Larger icons on tablet */
-  }
-
-  /* Increase heading and text size */
-  .feature-card h5 {
-    font-size: 1.6em; /* Larger heading */
-  }
-
-  .feature-card p {
-    font-size: 1.2em; /* Larger paragraph text */
-  }
-
-  .features-section {
-    padding: 40px 20px; /* Ensure padding */
-    margin-top: -500px; /* Adjust the margin to ensure proper spacing */
+    max-width: 300px; /* Maintain consistent size */
   }
 }
 
-/* Show all 4 cards per row on large devices */
-@media (min-width: 993px) {
-  .features-row > .col {
-    flex: 0 0 25%;
-    max-width: 25%;
-  }
-
-  /* Slightly larger cards on large screens */
+@media (min-width: 992px) {
+  /* For large devices */
   .feature-card {
-    padding: 30px; /* Keep padding consistent */
-    max-width: 350px; /* Card size can remain moderate */
-  }
-
-  .icon-color {
-    font-size: 3.5em; /* Large enough icons */
-  }
-
-  .feature-card h5 {
-    font-size: 1.5em; /* Slightly larger heading */
-  }
-
-  .feature-card p {
-    font-size: 1.1em; /* Moderate text size */
+    max-width: 350px; /* Increase size for larger devices */
   }
 }

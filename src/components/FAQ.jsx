@@ -6,7 +6,7 @@ const FAQ = () => {
   return (
     <section id="faq" className="faq mt-5">
       <div className="container">
-        <div className="row justify-content-center">
+        <div className="row justify-content-center marb">
           <div className="col-lg-8 text-center mb-5">
             <h2>Frequently Asked Questions</h2>
             <p>

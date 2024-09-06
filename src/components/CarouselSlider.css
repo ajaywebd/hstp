@@ -67,7 +67,7 @@
 @media (min-width: 1400px) {
   /* Your CSS here for extra large screens */
   .carousel-container {
-    height: 75vh; /* Reduce the height for smaller screens */
+    height: 80vh; /* Reduce the height for smaller screens */
     overflow: hidden;
     margin-bottom: -45px;
   }

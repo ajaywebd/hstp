@@ -2,6 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./FeaturesSection.css";
 import {
   faMicroscope,
   faUserMd,
@@ -16,7 +17,12 @@ const FeaturesSection = () => {
       <h6 className="text-muted">WHY CHOOSE US?</h6>
       <h2 className="mb-5">Offer for you</h2>
       <Row className="features-row">
-        <Col className="mb-4 d-flex justify-content-center">
+        {/* Adjust the columns for various screen sizes */}
+        <Col
+          xs={12}
+          sm={6}
+          lg={3}
+          className="mb-4 d-flex justify-content-center">
           <div className="feature-card">
             <FontAwesomeIcon
               icon={faMicroscope}
@@ -30,7 +36,11 @@ const FeaturesSection = () => {
             </p>
           </div>
         </Col>
-        <Col className="mb-4 d-flex justify-content-center">
+        <Col
+          xs={12}
+          sm={6}
+          lg={3}
+          className="mb-4 d-flex justify-content-center">
           <div className="feature-card">
             <FontAwesomeIcon
               icon={faUserMd}
@@ -44,7 +54,11 @@ const FeaturesSection = () => {
             </p>
           </div>
         </Col>
-        <Col className="mb-4 d-flex justify-content-center">
+        <Col
+          xs={12}
+          sm={6}
+          lg={3}
+          className="mb-4 d-flex justify-content-center">
           <div className="feature-card">
             <FontAwesomeIcon
               icon={faCertificate}
@@ -58,7 +72,11 @@ const FeaturesSection = () => {
             </p>
           </div>
         </Col>
-        <Col className="mb-4 d-flex justify-content-center">
+        <Col
+          xs={12}
+          sm={6}
+          lg={3}
+          className="mb-4 d-flex justify-content-center">
           <div className="feature-card">
             <FontAwesomeIcon
               icon={faHeartbeat}

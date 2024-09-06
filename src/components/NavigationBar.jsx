@@ -22,7 +22,7 @@ const NavigationBar = () => {
     <Navbar bg="light" expand="lg" className="py-3" expanded={expanded}>
       <Container>
         <Navbar.Brand as={Link} to="/" className="text-primary brand-logo">
-          Treatment Planning
+          CarePath-AI
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"

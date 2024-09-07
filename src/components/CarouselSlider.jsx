@@ -50,7 +50,7 @@ const CarouselSlider = () => {
         </Carousel.Item>
       </Carousel>
       <div className="txtStyle">
-        <h1>CarePath-AI</h1>
+        <h1>HSTP</h1>
         <p>
           Automated AI based <br /> Theraputic Treatment Planning Tool.
         </p>

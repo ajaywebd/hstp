@@ -15,8 +15,8 @@ const NewsSection = () => {
       <Container className="my-5">
         <Row className="justify-content-between align-items-center mb-4">
           <Col xs={12} md={8}>
-            <h6 className="text-muted">OUR NEWS</h6>
-            <h2>Skin care tips</h2>
+            <h6 className="text-muted text-start">OUR NEWS</h6>
+            <h2 className="text-start">Skin Care Tips</h2>
           </Col>
           <Col xs={12} md={4} className="text-md-end text-center">
             <Button variant="outline-primary">View All News</Button>
@@ -25,71 +25,85 @@ const NewsSection = () => {
         <Carousel
           activeIndex={index}
           onSelect={handleSelect}
-          indicators={false}>
+          indicators={false}
+          className="news-carousel">
           <Carousel.Item>
             <Row>
-              <Col xs={12} md={4} className="mb-4">
-                <Card className="h-100">
-                  <Card.Body>
-                    <Card.Title>
-                      Here’s how you can get a natural glow this party season
-                    </Card.Title>
-                    <Card.Text>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor.
-                    </Card.Text>
-                  </Card.Body>
-                  <Card.Footer className="d-flex align-items-center">
-                    <div>
-                      <small className="text-muted">Dec 06, 2019</small>
-                    </div>
-                  </Card.Footer>
-                </Card>
-              </Col>
-              <Col xs={12} md={4} className="mb-4">
-                <Card className="h-100">
-                  <Card.Body>
-                    <Card.Title>
-                      Get better skin with these top 10 tips for skin care
-                    </Card.Title>
-                    <Card.Text>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor.
-                    </Card.Text>
-                  </Card.Body>
-                  <Card.Footer className="d-flex align-items-center">
-                    <div>
-                      <small className="text-muted">Dec 06, 2019</small>
-                    </div>
-                  </Card.Footer>
-                </Card>
-              </Col>
-              <Col xs={12} md={4} className="mb-4">
-                <Card className="h-100">
-                  <Card.Body>
-                    <Card.Title>
-                      8 Ways to Save Your Skin if You Exercise Outside This
-                      Winter
-                    </Card.Title>
-                    <Card.Text>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor.
-                    </Card.Text>
-                  </Card.Body>
-                  <Card.Footer className="d-flex align-items-center">
-                    <div>
-                      <small className="text-muted">Dec 06, 2019</small>
-                    </div>
-                  </Card.Footer>
-                </Card>
-              </Col>
+              {newsItems.map((item, idx) => (
+                <Col xs={12} sm={12} md={4} className="mb-4" key={idx}>
+                  <Card className="h-100 d-flex flex-column">
+                    <Card.Body className="flex-grow-1 d-flex flex-column">
+                      <Card.Title className="text-start">
+                        {item.title}
+                      </Card.Title>
+                      <Card.Text className="text-start">
+                        <p className="text-start">{item.description}</p>
+                      </Card.Text>
+                    </Card.Body>
+                    <Card.Footer className="mt-auto">
+                      <div className="d-flex justify-content-between align-items-center">
+                        <small className="text-muted">{item.date}</small>
+                        <Button
+                          variant="primary"
+                          href={item.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="custom-button">
+                          Read More...
+                        </Button>
+                      </div>
+                    </Card.Footer>
+                  </Card>
+                </Col>
+              ))}
             </Row>
           </Carousel.Item>
-          {/* Add more Carousel.Items here with different content if needed */}
         </Carousel>
       </Container>
     </div>
   );
 };
+
+// Mock data to display multiple news items
+const newsItems = [
+  {
+    title: "Here’s how you can get a natural glow this party season",
+    description:
+      "For a natural glow this party season, focus on hydration—both inside and out. Drink plenty of water throughout the day to keep your skin hydrated and apply a moisturizing serum or cream that locks in moisture. This combination will leave your skin looking plump, radiant, and ready for any event.",
+    date: "Sep 07, 2024",
+    link: "https://example.com/natural-glow",
+  },
+  {
+    title: "Get better skin with these top 10 tips for skin care",
+    description: (
+      <>
+        <strong>Stay Hydrated:</strong> Drink plenty of water throughout the day
+        to keep your skin hydrated from the inside. Aim for 8 glasses daily to
+        flush out toxins and maintain a healthy glow. <br />
+        <strong>Cleanse Gently:</strong> Use a mild, pH-balanced cleanser twice
+        a day to remove dirt, oil, and makeup without stripping the skin of its
+        natural oils.
+      </>
+    ),
+    date: "Sep 07, 2024",
+    link: "https://example.com/skin-care-tips",
+  },
+  {
+    title: "8 Ways to Save Your Skin if You Exercise Outside This Winter",
+    description: (
+      <>
+        <strong>Apply a Moisturizing Sunscreen:</strong> Even in winter, UV rays
+        can damage your skin. Use a broad-spectrum sunscreen with at least SPF
+        30, and ensure it has hydrating ingredients to prevent dryness. <br />
+        <strong>Moisturize Before and After:</strong> Cold air can strip your
+        skin of moisture. Apply a rich, oil-based moisturizer before heading out
+        and after your workout to help your skin retain moisture and prevent
+        flakiness.
+      </>
+    ),
+    date: "Sep 07, 2024",
+    link: "https://example.com/winter-skin-care",
+  },
+];
 
 export default NewsSection;

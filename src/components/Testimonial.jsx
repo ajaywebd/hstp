@@ -55,8 +55,8 @@ const Testimonial = () => {
               </p>
             </div>
             <div className="testimonial-author mt-4">
-              <h5>John Doe</h5>
-              <p className="text-muted">CEO, Company</p>
+              <h5>Ajay Maurya</h5>
+              {/* <p className="text-muted">CEO, Company</p> */}
             </div>
           </div>
 
@@ -68,8 +68,8 @@ const Testimonial = () => {
               </p>
             </div>
             <div className="testimonial-author mt-4">
-              <h5>Jane Smith</h5>
-              <p className="text-muted">Marketing Director</p>
+              <h5>Abhishek Sharma</h5>
+              {/* <p className="text-muted">Marketing Director</p> */}
             </div>
           </div>
 
@@ -81,8 +81,8 @@ const Testimonial = () => {
               </p>
             </div>
             <div className="testimonial-author mt-4">
-              <h5>Michael Brown</h5>
-              <p className="text-muted">Entrepreneur</p>
+              <h5>Ankit Jahari</h5>
+              {/* <p className="text-muted">Entrepreneur</p> */}
             </div>
           </div>
 

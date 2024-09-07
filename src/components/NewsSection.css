@@ -1,12 +1,41 @@
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: transparent !important; /* Makes background transparent */
-  width: 30px;
-  height: 30px;
+/* Style for the professional button look */
+.custom-button {
+  background-color: #007bff; /* Professional primary blue */
+  border: none;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
-.carousel-control-prev-icon::after,
-.carousel-control-next-icon::after {
-  font-size: 20px; /* Adjust the size of the arrow */
-  color: #343a40; /* Changes the arrow color to a dark grey */
+.custom-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  color: white;
+  box-shadow: 0px 4px 6px rgba(0, 123, 255, 0.4); /* Subtle shadow on hover */
+}
+
+.custom-button:focus {
+  outline: none;
+  box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.7); /* Focus shadow */
+}
+
+/* Ensuring the card footer stays aligned to the bottom */
+.card-footer {
+  background-color: transparent;
+}
+
+.card-body {
+  padding-bottom: 20px;
+}
+
+/* Responsive carousel and card layout */
+@media (max-width: 768px) {
+  .news-carousel .carousel-item {
+    padding: 0 15px;
+  }
+
+  .card {
+    margin-bottom: 20px;
+  }
 }

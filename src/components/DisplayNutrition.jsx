@@ -48,26 +48,26 @@ const DisplayNutrition = () => {
                         className="col-lg-4 col-md-6 col-sm-12 meal-option mb-4">
                         <div className="card h-100">
                           <div className="card-body">
-                            <h4 className="card-title">
+                            <h4 className="card-title text-start">
                               Option {option.option}
                             </h4>
-                            <p className="card-text">
+                            <p className="card-text text-start">
                               <strong>Meal:</strong> {option.meal}
                             </p>
-                            <p className="card-text">
+                            <p className="card-text text-start">
                               <strong>Quantity:</strong> {option.quantity}
                             </p>
-                            <p className="card-text">
+                            <p className="card-text text-start">
                               <strong>Calories:</strong> {option.calories} kcal
                             </p>
-                            <p className="card-text">
+                            <p className="card-text text-start">
                               <strong>Carbohydrates:</strong>{" "}
                               {option.carbohydrates}
                             </p>
-                            <p className="card-text">
+                            <p className="card-text text-start">
                               <strong>Proteins:</strong> {option.proteins}
                             </p>
-                            <p className="card-text">
+                            <p className="card-text text-start">
                               <strong>Fats:</strong> {option.fats}
                             </p>
                           </div>

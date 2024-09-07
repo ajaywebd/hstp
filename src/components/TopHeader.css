@@ -1,25 +1,35 @@
 .footer-container {
-  background-color: #0d4a7f; /* Replace this with the exact color from the image */
+  background-color: #0d4a7f; /* Background color */
   padding: 20px 0;
-  color: #ffffff; /* Text color to contrast with the dark background */
+  color: #ffffff; /* Text color */
 }
 
 .footer-container .fa {
   font-size: 1.2rem;
-  color: #ffffff; /* Icons should match the text color */
-  transition: color 0.3s ease;
+  color: #ffffff; /* Icon color */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover transition */
 }
 
 .footer-container .fa:hover {
-  color: #00bfff; /* Hover effect for icons */
+  color: #99d6ff; /* Lighter blue hover effect */
+  transform: translateY(-2px); /* Slight upward movement on hover */
+}
+
+.footer-container a {
+  color: #ffffff; /* Ensure links are white */
+  transition: color 0.3s ease;
+}
+
+.footer-container a:hover {
+  color: #99d6ff; /* Lighter blue hover effect for links */
 }
 
 .footer-container p {
   margin: 0;
-  color: #ffffff; /* Ensure text remains visible on the background */
+  color: #ffffff; /* Text color */
 }
 
-/* Responsive Design for Mobile Screens */
+/* Responsive design */
 @media (max-width: 768px) {
   .footer-container .row {
     text-align: center;

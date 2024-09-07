@@ -19,81 +19,84 @@ const DisplayDisease = () => {
     selectedData = Children_Disease.find((disease) => disease.id === value);
   }
 
-  // Render the content if the object with id === value exists
   return (
-    <div className="disease-container">
+    <div className="container disease-container">
       {selectedData ? (
         <>
-          <h1 className="disease-title">{selectedData.title}</h1>
-          <p className="disease-description">{selectedData.description}</p>
+          <div className="row">
+            <div className="col-md-12">
+              <h1 className="disease-title">{selectedData.title}</h1>
+              <p className="disease-description">{selectedData.description}</p>
+            </div>
+          </div>
 
           {/* Displaying Remedies */}
-          <h2 className="section-title">Remedies:</h2>
-          {selectedData.remedies.map((item, index) => (
-            <div key={index} className="remedy-item">
-              <h3 className="remedy-name">
-                {index + 1}. {item.name}
-              </h3>
-              <p>
-                <strong>Remedy:</strong> {item.remedy}
-              </p>
-              <p>
-                <strong>Precaution:</strong> {item.precaution}
-              </p>
+          <div className="row">
+            <div className="col-md-12">
+              <h2 className="section-title">Remedies:</h2>
+              {selectedData.remedies.map((item, index) => (
+                <div key={index} className="remedy-item">
+                  <h3 className="remedy-name">
+                    {index + 1}. {item.name}
+                  </h3>
+                  <p>
+                    <strong>Remedy:</strong> {item.remedy}
+                  </p>
+                  <p>
+                    <strong>Precaution:</strong> {item.precaution}
+                  </p>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
 
           {/* Displaying Preventive Measures */}
-          <h2 className="section-title">Preventive Measures:</h2>
-          <ul className="preventive-list">
-            {selectedData.preventive_measures.map((measure, index) => (
-              <li key={index}>
-                <strong>{measure.measure}:</strong> {measure.description}
-              </li>
-            ))}
-          </ul>
+          <div className="row">
+            <div className="col-md-12">
+              <h2 className="section-title">Preventive Measures:</h2>
+              <ul className="preventive-list">
+                {selectedData.preventive_measures.map((measure, index) => (
+                  <li key={index}>
+                    <strong>{measure.measure}:</strong> {measure.description}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
 
           {/* Displaying Notes */}
-          <h2 className="section-title">Note:</h2>
-          {selectedData.notes.map((note, index) => (
-            <div key={index} className="note-item">
-              {note.subheading ? (
-                <>
-                  <h6>{note.subheading}</h6>
-                  <ul>
-                    {note.points.map((point, pointIndex) => (
-                      <li key={pointIndex}>{point}</li>
-                    ))}
-                  </ul>
-                </>
-              ) : (
-                <>
-                  <ul>
-                    <li>{note}</li>
-                  </ul>
-                </>
-              )}
+          <div className="row">
+            <div className="col-md-12">
+              <h2 className="section-title">Note:</h2>
+              {selectedData.notes.map((note, index) => (
+                <div key={index} className="note-item">
+                  {note.subheading ? (
+                    <>
+                      <h6>{note.subheading}</h6>
+                      <ul>
+                        {note.points.map((point, pointIndex) => (
+                          <li key={pointIndex}>{point}</li>
+                        ))}
+                      </ul>
+                    </>
+                  ) : (
+                    <ul>
+                      <li>{note}</li>
+                    </ul>
+                  )}
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
 
-          {/* Conditional Back Button */}
-          {name === "male" && (
-            <Link to="/disease/maleDisease" className="btn btn-success mb-3">
-              Back to All Diseases
-            </Link>
-          )}
-          {name === "female" && (
-            <Link to="/disease/femaleDisease" className="btn btn-success mb-3">
-              Back to All Diseases
-            </Link>
-          )}
-          {name === "children" && (
-            <Link
-              to="/disease/childrenDisease"
-              className="btn btn-success mb-3">
-              Back to All Diseases
-            </Link>
-          )}
+          {/* Back Button */}
+          <div className="row mt-4">
+            <div className="col text-center">
+              <Link to={`/disease/${name}Disease`} className="btn btn-success">
+                Back to All Diseases
+              </Link>
+            </div>
+          </div>
         </>
       ) : (
         <p>No data found for the selected ID.</p>

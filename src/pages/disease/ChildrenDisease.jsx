@@ -111,7 +111,7 @@ const ChildrenDisease = () => {
               filteredDiseases.map((disease, index) => (
                 <li key={index} className="mb-2">
                   <Link
-                    state={{ value: index + 1, name: "male" }}
+                    state={{ value: index + 1, name: "children" }}
                     to="/displayDisease"
                     className="custom-link">
                     {disease}

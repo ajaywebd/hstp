@@ -50,19 +50,23 @@ const DisplayDisease = () => {
             </div>
           </div>
 
-          {/* Displaying Preventive Measures */}
-          <div className="row">
-            <div className="col-md-12">
-              <h2 className="section-title">Preventive Measures:</h2>
-              <ul className="preventive-list">
-                {selectedData.preventive_measures.map((measure, index) => (
-                  <li key={index}>
-                    <strong>{measure.measure}:</strong> {measure.description}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+          {/* Conditionally Displaying Preventive Measures */}
+          {selectedData.preventive_measures &&
+            selectedData.preventive_measures.length > 0 && (
+              <div className="row">
+                <div className="col-md-12">
+                  <h2 className="section-title">Preventive Measures:</h2>
+                  <ul className="preventive-list">
+                    {selectedData.preventive_measures.map((measure, index) => (
+                      <li key={index}>
+                        <strong>{measure.measure}:</strong>{" "}
+                        {measure.description}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            )}
 
           {/* Displaying Notes */}
           <div className="row">

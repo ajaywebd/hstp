@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./style.css"; // Assuming you create a separate CSS file for custom styles
 
-const FemaleDisease = () => {
+const MaleDisease = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOrder, setSortOrder] = useState("asc");
 
@@ -10,53 +10,103 @@ const FemaleDisease = () => {
     "Abdominal pain",
     "Acne",
     "Allergies",
+    "Anxiety",
     "Athlete's foot",
     "Back pain",
+    "Bacterial vaginosis",
+    "Bad breath (halitosis)",
+    "Blisters",
     "Bloating",
+    "Body odor",
+    "Brittle nails",
     "Bruises",
     "Canker sores",
+    "Cellulite",
+    "Chafing",
     "Chapped lips",
+    "Chronic fatigue syndrome (CFS)",
     "Cold sores (herpes simplex)",
     "Colic",
     "Common Cold",
+    "Concentration issues",
     "Constipation",
     "Cough",
     "Dandruff",
+    "Dark circles under eyes",
     "Diarrhea",
+    "Dry eyes",
     "Dry skin",
+    "Dull hair",
     "Ear infections",
     "Eczema (atopic dermatitis)",
+    "Excessive sweating",
+    "Eyelid swelling",
+    "Fatigue",
+    "Fibromyalgia",
     "Gallbladder issues (minor)",
     "Gas",
+    "Gum disease (gingivitis)",
+    "Hair loss (non-severe)",
+    "Hangnails",
     "Hay fever",
     "Headaches",
     "Heartburn (acid reflux)",
     "Hemorrhoids",
     "Hives (urticaria)",
+    "Hot flashes",
     "Indigestion",
     "Insect bites and stings",
+    "Insomnia",
     "Irritable bowel syndrome (IBS)",
+    "Itchy skin",
+    "Jet lag",
     "Joint pain",
+    "Leg cramps",
+    "Low energy",
+    "Memory problems",
+    "Menstrual cramps",
     "Migraines",
+    "Mild anemia",
     "Mild arthritis",
     "Mild asthma",
     "Mild dehydration",
+    "Mild depression",
     "Mild fever",
     "Mild gastroenteritis",
     "Minor burns",
+    "Minor cuts and scrapes",
+    "Minor sleep disorders",
     "Morning sickness",
+    "Motion sickness",
     "Mouth ulcers",
     "Muscle aches",
     "Nail fungus",
     "Nausea",
+    "Night sweats",
+    "Nosebleeds",
     "Pink eye (conjunctivitis)",
+    "Poor circulation",
+    "Premenstrual syndrome (PMS)",
     "Psoriasis",
+    "Puffy eyes",
+    "Restless legs syndrome",
     "Ringworm (tinea)",
     "Rosacea",
+    "Scars",
     "Sinusitis",
+    "Sore eyes",
     "Sore throat",
+    "Split ends",
+    "Stress",
+    "Stretch marks",
     "Sunburn",
+    "Swimmer's ear",
+    "Toothache",
+    "Urinary tract infections (UTIs)",
+    "Vaginal dryness",
+    "Varicose veins",
     "Warts",
+    "Yeast infections (candidiasis)",
   ];
 
   // Sort the diseases alphabetically based on the sortOrder
@@ -111,7 +161,7 @@ const FemaleDisease = () => {
               filteredDiseases.map((disease, index) => (
                 <li key={index} className="mb-2">
                   <Link
-                    state={{ value: index + 1, name: "male" }}
+                    state={{ value: index + 1, name: "female" }}
                     to="/displayDisease"
                     className="custom-link">
                     {disease}
@@ -128,4 +178,4 @@ const FemaleDisease = () => {
   );
 };
 
-export default FemaleDisease;
+export default MaleDisease;

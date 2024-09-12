@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./style.css"; // Assuming you create a separate CSS file for custom styles
 
-const MaleDisease = () => {
+const femaleDisease = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOrder, setSortOrder] = useState("asc");
 
@@ -128,4 +128,4 @@ const MaleDisease = () => {
   );
 };
 
-export default MaleDisease;
+export default femaleDisease;

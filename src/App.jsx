@@ -14,11 +14,14 @@ import Nutrition from "./pages/Nutrition";
 import AerobicExercise from "./pages/exercise/AerobicExercise";
 import PilatesExcercise from "./pages/exercise/PilatesExcercise";
 import ChildrenExercise from "./pages/exercise/ChildrenExercise";
-import YogaAsans from "./pages/exercise/YogaAsans";
-import DisplayExercise from "./components/DisplayExercise";
+import YogaExercise from "./pages/exercise/YogaExercise";
 import DisplayNutrition from "./components/DisplayNutrition";
+import DisplayChildren from "./components/DisplayChildren";
+import DisplayAerobic from "./components/DisplayAerobic";
+import DisplayPilate from "./components/DisplayPilate";
 import CalculateBMI from "./components/CalculateBMI";
 import TopHeader from "./components/TopHeader";
+import YogaDisplay from "./components/YogaDisplay";
 
 function App() {
   return (
@@ -37,10 +40,13 @@ function App() {
           element={<ChildrenExercise />}
         />
         <Route path="/exercise/pilateExercise" element={<PilatesExcercise />} />
-        <Route path="/exercise/yogaAsans" element={<YogaAsans />} />
+        <Route path="/exercise/yogaExercise" element={<YogaExercise />} />
         <Route path="/nutrition" element={<Nutrition />} />
         <Route path="/displayDisease" element={<DisplayDisease />} />
-        <Route path="/displayExercise" element={<DisplayExercise />} />
+        <Route path="/displayPilate" element={<DisplayPilate />} />
+        <Route path="/displayAerobic" element={<DisplayAerobic />} />
+        <Route path="/yogaDisplay" element={<YogaDisplay />} />
+        <Route path="/displayChildren" element={<DisplayChildren />} />
         <Route path="/displayBMI" element={<DisplayNutrition />} />
         <Route path="/nutrition" element={<Nutrition />} />
         <Route path="/calculateBMI" element={<CalculateBMI />} />

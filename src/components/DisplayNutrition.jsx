@@ -25,7 +25,8 @@ const DisplayNutrition = () => {
           <>
             {/* Display Title */}
             <h1 className="text-center disease-title mb-4">
-              Nutrition Plan for a {selectedAge}-year-old {selectedGender}
+              Nutrition Plan for a {selectedAge}-year-old {selectedGender} with
+              BMI {selectedBMI}
             </h1>
 
             {/* Iterate through each meal type (breakfast, lunch, etc.) */}

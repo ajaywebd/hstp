@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import Male_Disease from "../data/Male_Disease.jsx"; // Importing the JSON data
 import Children_Disease from "../data/Children_Disease.jsx"; // Importing the JSON data
 import Female_Disease from "../data/Female_Disease.jsx"; // Importing the JSON data
-import "./DisplayDisease.css"; // Import the CSS file for custom styling
+import "./DisplayDisease.css"; // Import the updated CSS file
 
 const DisplayDisease = () => {
   const location = useLocation();

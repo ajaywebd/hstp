@@ -91,7 +91,7 @@ const NavigationBar = () => {
               </NavDropdown.Item>
               <NavDropdown.Item
                 as={Link}
-                to="/exercise/yogaAsans"
+                to="/exercise/yogaExercise"
                 onClick={handleMenuClick}>
                 Yoga Asans
               </NavDropdown.Item>

@@ -2,22 +2,11 @@ import React from "react";
 import "./DisplayExercise.css";
 import { Link, useLocation } from "react-router-dom";
 import Aerobic_Exercise from "../data/Aerobic_Exercise";
-import Pilate_Exercise from "../data/Pilate_Exercise";
-import Yoga_Asan from "../data/Yoga_Asan";
 
 const DisplayExercise = () => {
   const location = useLocation();
-  const { value, name } = location.state || {};
-  let selectedData;
-
-  // Determine which dataset to use based on the "name" value
-  if (name === "aerobic") {
-    selectedData = Aerobic_Exercise.find((exercise) => exercise.id === value);
-  } else if (name === "pilate") {
-    selectedData = Pilate_Exercise.find((exercise) => exercise.id === value);
-  } else {
-    selectedData = Yoga_Asan.find((exercise) => exercise.id === value);
-  }
+  const { value } = location.state || {};
+  let selectedData = Aerobic_Exercise.find((exercise) => exercise.id === value);
 
   // If no data is found, return a message
   if (!selectedData) {

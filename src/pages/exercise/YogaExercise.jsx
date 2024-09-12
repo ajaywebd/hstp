@@ -2,61 +2,61 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./style.css"; // Assuming you create a separate CSS file for custom styles
 
-const PilatesExcercise = () => {
+const YogaExercise = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOrder, setSortOrder] = useState("asc");
 
   const diseases = [
-    "Arabesque",
-    "Bicycle",
-    "Bird Dog",
-    "Boomerang",
-    "Bridges",
-    "Clam Shells",
-    "Control Balance",
-    "Corkscrew",
-    "Crab",
-    "Criss Cross",
-    "Double Leg Kick",
-    "Double Leg Stretch",
-    "Elephant",
-    "Hip Circles",
-    "Hundred",
-    "Jackknife",
-    "Kneeling Side Kicks",
-    "Leg Pull Back",
-    "Leg Pull Front",
-    "Lower Lift (Double Straight Leg Stretch)",
-    "Mermaid",
-    "Mountain Climber",
-    "Neck Pull",
-    "Open Leg Rocker",
-    "Pendulum",
-    "Pilates Push-Up",
-    "Plank",
-    "Push-Up",
-    "Rocking",
-    "Roll Over",
-    "Rolling Like a Ball to Teaser",
-    "Rolling Like a Ball",
-    "Roll-Up",
-    "Saw",
-    "Scissors (Single Straight Leg Stretch)",
-    "Seal",
-    "Shoulder Bridge",
-    "Side Bend",
-    "Side Kick Series",
-    "Side Plank",
-    "Single Leg Circle",
-    "Single Leg Kick",
-    "Single Leg Stretch",
-    "Spine Stretch Forward",
-    "Spine Twist",
-    "Spiral",
-    "Swan",
-    "Swimming",
-    "Teaser",
-    "Tendon Stretch",
+    "Adho Mukha Svanasana (Downward Facing Dog)",
+    "Anantasana (Vishnu's Couch Pose)",
+    "Ardha Chandrasana (Half Moon Pose)",
+    "Ardha Matsyendrasana (Half Lord of the Fishes Pose)",
+    "Ardha Uttanasana (Half Forward Bend)",
+    "Baddha Konasana (Bound Angle Pose)",
+    "Bakasana (Crow Pose)",
+    "Balasana (Child's Pose)",
+    "Bharadvajasana (Bharadvaja's Twist)",
+    "Bhujangasana (Cobra Pose)",
+    "Chaturanga Dandasana (Four-Limbed Staff Pose)",
+    "Dhanurasana (Bow Pose)",
+    "Eka Pada Rajakapotasana (One-Legged King Pigeon Pose)",
+    "Garudasana (Eagle Pose)",
+    "Gomukhasana (Cow Face Pose)",
+    "Halasana (Plow Pose)",
+    "Janu Sirsasana (Head-to-Knee Pose)",
+    "Kakasana (Crane Pose)",
+    "Malasana (Garland Pose)",
+    "Marichyasana (Marichi's Pose)",
+    "Matsyasana (Fish Pose)",
+    "Natarajasana (Dancer Pose)",
+    "Padangusthasana (Big Toe Pose)",
+    "Parivrtta Trikonasana (Revolved Triangle Pose)",
+    "Parsvottanasana (Pyramid Pose)",
+    "Paschimottanasana (Seated Forward Bend)",
+    "Prasarita Padottanasana (Wide-Legged Forward Bend)",
+    "Purvottanasana (Upward Plank Pose)",
+    "Salabhasana (Locust Pose)",
+    "Sarvangasana (Shoulder Stand)",
+    "Savasana (Corpse Pose)",
+    "Setu Bandhasana (Bridge Pose)",
+    "Sirsasana (Headstand)",
+    "Sukhasana (Easy Pose)",
+    "Supta Baddha Konasana (Reclining Bound Angle Pose)",
+    "Supta Padangusthasana (Reclining Hand-to-Big-Toe Pose)",
+    "Tadasana (Mountain Pose)",
+    "Trikonasana (Triangle Pose)",
+    "Upavistha Konasana (Wide-Angle Seated Forward Bend)",
+    "Urdhva Dhanurasana (Wheel Pose)",
+    "Urdhva Mukha Svanasana (Upward Facing Dog)",
+    "Utkatasana (Chair Pose)",
+    "Uttanasana (Standing Forward Bend)",
+    "Utthita Hasta Padangusthasana (Extended Hand-to-Big-Toe Pose)",
+    "Utthita Parsvakonasana (Extended Side Angle Pose)",
+    "Vasisthasana (Side Plank Pose)",
+    "Virabhadrasana I (Warrior I)",
+    "Virabhadrasana II (Warrior II)",
+    "Virabhadrasana III (Warrior III)",
+    "Vrikshasana (Tree Pose)",
   ];
 
   // Sort the diseases alphabetically based on the sortOrder
@@ -111,8 +111,8 @@ const PilatesExcercise = () => {
               filteredDiseases.map((disease, index) => (
                 <li key={index} className="mb-2">
                   <Link
-                    state={{ value: index + 1, name: "pilate" }}
-                    to="/DisplayPilate"
+                    state={{ value: index + 1 }}
+                    to="/yogaDisplay"
                     className="custom-link">
                     {disease}
                   </Link>
@@ -128,4 +128,4 @@ const PilatesExcercise = () => {
   );
 };
 
-export default PilatesExcercise;
+export default YogaExercise;

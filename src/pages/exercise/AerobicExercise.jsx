@@ -112,7 +112,7 @@ const AerobicExercise = () => {
                 <li key={index} className="mb-2">
                   <Link
                     state={{ value: index + 1, name: "aerobic" }}
-                    to="/displayExercise"
+                    to="/displayAerobic"
                     className="custom-link">
                     {disease}
                   </Link>

@@ -75,15 +75,14 @@ const YogaExercise = () => {
 
   return (
     <div className="container my-5">
-      <h1 className="text-primary text-center mb-3">General Health</h1>
+      <h1 className="text-primary text-center mb-3">Yoga Asanas</h1>
       <p className="text-center text-muted mb-4">
-        Keeping kids healthy is a big job! Read up on common conditions and
-        illnesses, body basics, caring for children, and much more.
+        Explore the world of Yoga Asanas to improve flexibility, strength, and
+        mental clarity. Learn various poses designed to enhance physical and
+        emotional well-being through mindful practice.
       </p>
       <div className="card p-4 shadow-sm custom-height">
-        <h3 className="text-primary mb-4">
-          Abdominal pain, Acne & many more...
-        </h3>
+        <h3 className="text-primary mb-4">Common 50 Yoga Asans</h3>
 
         {/* Search Input and Sorting Dropdown */}
         <div className="mb-4 d-flex justify-content-between align-items-center">

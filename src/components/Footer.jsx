@@ -23,10 +23,7 @@ const Footer = () => {
               />{" "}
               HSTP
             </h5>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore.
-            </p>
+            <p>Automated AI based Theraputic Treatment Planning Tool.</p>
             <div className="d-flex justify-content-center justify-content-md-start">
               <a href="#" className="text-white me-3">
                 <FaFacebookF />

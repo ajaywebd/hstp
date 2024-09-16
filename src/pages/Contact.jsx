@@ -48,8 +48,9 @@ const Contact = () => {
             <div className="col-lg-8 text-center mb-5">
               <h2>Contact</h2>
               <p>
-                Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-                consectetur velit
+                We are here to assist with any inquiries related to our
+                services. Feel free to reach out to us with your questions and
+                we’ll be happy to help.
               </p>
             </div>
           </div>
@@ -57,11 +58,11 @@ const Contact = () => {
           <div className="row mb-4">
             <div className="col-lg-12">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.863337526027!2d-74.00601528459333!3d40.71277597933081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a316b0075bd%3A0x3f9b7e6fbe2c7e27!2sBrooklyn%20Bridge!5e0!3m2!1sen!2sus!4v1649182331327!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.83924015347!2d77.06889916058586!3d28.52728030902144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce374a4a93ded%3A0x66c3be73a5d21536!2sDelhi%2C%20India!5e0!3m2!1sen!2sus!4v1694875612327!5m2!1sen!2sus"
                 style={{ border: 0, width: "100%", height: "350px" }}
                 allowFullScreen=""
                 loading="lazy"
-                title="Google Maps"></iframe>
+                title="Google Maps - Delhi, India"></iframe>
             </div>
           </div>
 
@@ -71,19 +72,23 @@ const Contact = () => {
                 <div className="address mb-4">
                   <i className="bi bi-geo-alt"></i>
                   <h4>Location:</h4>
-                  <p>{userInfo ? userInfo.location : "Loading..."}</p>
+                  <p>
+                    {" "}
+                    D-71, Corner Building, D Block Main Rd, Malviya Nagar, New
+                    Delhi, Delhi 110017
+                  </p>
                 </div>
 
                 <div className="phone mb-4">
                   <i className="bi bi-phone"></i>
                   <h4>Call Us:</h4>
-                  <p>{userInfo ? userInfo.phone : "+1 5589 55488 55"}</p>
+                  <p>{userInfo ? userInfo.phone : "18002124669"}</p>
                 </div>
 
                 <div className="email mb-4">
                   <i className="bi bi-envelope"></i>
                   <h4>Email Us:</h4>
-                  <p>prajaymaurya@gmail.com</p>
+                  <p>customersupport@brbiomedical.co</p>
                 </div>
               </div>
             </div>

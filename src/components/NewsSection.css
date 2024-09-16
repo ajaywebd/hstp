@@ -20,9 +20,19 @@
   box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.7); /* Focus shadow */
 }
 
-/* Ensuring the card footer stays aligned to the bottom */
+/* Centering the button inside the card footer */
 .card-footer {
   background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card-footer .custom-button {
+  width: 100%; /* Full-width button */
+  display: block;
+  text-align: center; /* Ensure the button is centered */
 }
 
 .card-body {

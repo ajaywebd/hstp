@@ -35,7 +35,7 @@
   font-size: 1.5rem;
 }
 
-/* Benefits section - simple bullet points */
+/* Benefits section */
 .list-group {
   list-style-type: disc; /* Simple bullets */
   padding-left: 20px;
@@ -56,6 +56,11 @@
 .step-item,
 .modification-item {
   margin-bottom: 20px;
+}
+.type-item p,
+.step-item p,
+.modification-item p {
+  text-align: start;
 }
 
 /* Subtitles within sections */
@@ -80,6 +85,50 @@
 
 .btn-primary:hover {
   background-color: #0056b3;
+}
+/* Ensure strong tags in list items are bold */
+.list-group-item strong {
+  font-weight: bold;
+}
+
+/* Styling for list items */
+.list-group-item {
+  font-size: 1rem;
+  line-height: 1.6;
+  background: transparent; /* No background */
+  padding: 5px 0;
+  margin-bottom: 10px; /* Space between items */
+  border: none; /* No border */
+}
+
+/* Section titles, like "Tips:" */
+.section-title {
+  color: #28a745; /* Green for titles */
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+/* Ensure strong tags in list items are bold */
+.list-group-item strong {
+  font-weight: bold;
+}
+
+/* Styling for list items */
+.list-group-item {
+  font-size: 1rem;
+  line-height: 1.6;
+  background: transparent; /* No background */
+  padding: 5px 0;
+  margin-bottom: 10px; /* Space between items */
+  border: none; /* No border */
+}
+
+/* Section titles */
+.section-title {
+  color: #28a745; /* Green for titles */
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
 }
 
 /* Responsive adjustments */

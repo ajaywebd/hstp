@@ -1,13 +1,12 @@
 import React from "react";
-import "./DisplayExercise.css";
-import { Link, useLocation } from "react-router-dom"; // Import Link for navigation
-import Yoga_Exercise from "./../data/Yoga_Exercise";
-// The Bicycle Exercise JSON data
+import "./DisplayPilate.css";
+import { Link, useLocation } from "react-router-dom";
+import Pilate_Exercise from "./../data/Pilate_Exercise";
 
 const DisplayPilate = () => {
   const location = useLocation();
   const { value } = location.state || {};
-  let selectedData = Yoga_Exercise.find((exercise) => exercise.id === value);
+  let selectedData = Pilate_Exercise.find((exercise) => exercise.id === value);
 
   // If no data is found, return a message
   if (!selectedData) {
@@ -32,10 +31,10 @@ const DisplayPilate = () => {
       {selectedData.starting_position && (
         <section>
           <h3 className="section-title">Starting Position:</h3>
-          <ul>
+          <ul className="list-group">
             {Object.entries(selectedData.starting_position).map(
               ([key, value], index) => (
-                <li key={index}>
+                <li key={index} className="list-group-item">
                   <strong>{key.replace(/_/g, " ").toUpperCase()}:</strong>{" "}
                   {value}
                 </li>
@@ -79,7 +78,7 @@ const DisplayPilate = () => {
           <ul className="list-group">
             {selectedData.benefits.map((benefit, index) => (
               <li key={index} className="list-group-item">
-                {benefit}
+                {index + 1}. {benefit}
               </li>
             ))}
           </ul>
@@ -93,7 +92,7 @@ const DisplayPilate = () => {
           <ul className="list-group">
             {selectedData.tips.map((tip, index) => (
               <li key={index} className="list-group-item">
-                {tip}
+                {index + 1}. {tip}
               </li>
             ))}
           </ul>
@@ -104,12 +103,14 @@ const DisplayPilate = () => {
       {selectedData.modifications && (
         <section>
           <h3 className="section-title">Modifications:</h3>
-          {selectedData.modifications.map((modification, index) => (
-            <div key={index} className="modification-item">
-              <h4>For {modification.for}:</h4>
-              <p>{modification.description}</p>
-            </div>
-          ))}
+          <ul className="list-group">
+            {selectedData.modifications.map((modification, index) => (
+              <li key={index} className="list-group-item">
+                <strong>For {modification.for}:</strong>{" "}
+                {modification.description}
+              </li>
+            ))}
+          </ul>
         </section>
       )}
 

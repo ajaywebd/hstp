@@ -81,7 +81,7 @@ const Testimonial = () => {
               </p>
             </div>
             <div className="testimonial-author mt-4">
-              <h5>Ankit Jahari</h5>
+              <h5>Ankit Jauhari</h5>
               {/* <p className="text-muted">Entrepreneur</p> */}
             </div>
           </div>

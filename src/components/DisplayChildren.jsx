@@ -1,5 +1,5 @@
 import React from "react";
-import "./DisplayExercise.css";
+import "./DisplayChildren.css";
 import { Link, useLocation } from "react-router-dom"; // Import Link for navigation
 import Children_Exercise from "./../data/Children_Exercise"; // Assuming the data is in Children_Exercise
 
@@ -39,7 +39,7 @@ const DisplayChildren = () => {
             {section.subheadings &&
               section.subheadings.map((sub, subIndex) => (
                 <div key={subIndex} className="subheading-item">
-                  <h4>{sub.subheading}</h4>
+                  <h4>{sub.subheading} :</h4>
                   <p>{sub.content}</p>
                 </div>
               ))}

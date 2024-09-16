@@ -1,12 +1,14 @@
 import React from "react";
-import "./DisplayExercise.css";
+import "./DisplayAerobic.css";
 import { Link, useLocation } from "react-router-dom";
 import Aerobic_Exercise from "../data/Aerobic_Exercise";
 
 const DisplayExercise = () => {
   const location = useLocation();
   const { value } = location.state || {};
-  let selectedData = Aerobic_Exercise.find((exercise) => exercise.id === value);
+  const selectedData = Aerobic_Exercise.find(
+    (exercise) => exercise.id === value
+  );
 
   // If no data is found, return a message
   if (!selectedData) {
@@ -33,10 +35,10 @@ const DisplayExercise = () => {
           <h3 className="section-title">Benefits:</h3>
           <ul className="list-group">
             {selectedData.benefits.map((benefit, index) => {
-              const parts = benefit.split(":");
+              const [key, value] = benefit.split(":");
               return (
                 <li key={index} className="list-group-item">
-                  <strong>{parts[0]}</strong>: {parts[1]}
+                  <strong>{key}</strong>: {value}
                 </li>
               );
             })}
@@ -44,19 +46,20 @@ const DisplayExercise = () => {
         </section>
       )}
 
-      {/* Types of Classes or Common Drills Section */}
+      {/* Types of Classes Section */}
       {selectedData.types && (
         <section>
           <h3 className="section-title">Types of Classes:</h3>
           {selectedData.types.map((type, index) => (
             <div key={index} className="type-item">
-              <h4>{type.name}</h4>
+              <h4>{type.name} :</h4>
               <p>{type.description}</p>
             </div>
           ))}
         </section>
       )}
 
+      {/* Common Drills Section */}
       {selectedData.common_drills && (
         <section>
           <h3 className="section-title">Common Drills:</h3>
@@ -77,13 +80,13 @@ const DisplayExercise = () => {
         </section>
       )}
 
-      {/* General Steps or Starting Position Section */}
+      {/* General Steps Section */}
       {selectedData.steps && (
         <section>
           <h3 className="section-title">General Steps:</h3>
           {selectedData.steps.map((step, index) => (
             <div key={index} className="step-item">
-              <h4>{step.step}</h4>
+              <h4>{step.step} :</h4>
               <p>
                 {Array.isArray(step.description)
                   ? step.description.join(", ")
@@ -94,6 +97,7 @@ const DisplayExercise = () => {
         </section>
       )}
 
+      {/* Starting Position Section */}
       {selectedData.starting_position && (
         <section>
           <h3 className="section-title">Starting Position:</h3>
@@ -115,11 +119,14 @@ const DisplayExercise = () => {
         <section>
           <h3 className="section-title">Tips:</h3>
           <ul className="list-group">
-            {selectedData.tips.map((tip, index) => (
-              <li key={index} className="list-group-item">
-                {tip}
-              </li>
-            ))}
+            {selectedData.tips.map((tip, index) => {
+              const [heading, paragraph] = tip.split(":");
+              return (
+                <li key={index} className="list-group-item">
+                  <strong>{heading}:</strong> {paragraph}
+                </li>
+              );
+            })}
           </ul>
         </section>
       )}
@@ -142,11 +149,14 @@ const DisplayExercise = () => {
         <section>
           <h3 className="section-title">Safety Tips:</h3>
           <ul className="list-group">
-            {selectedData.safety_tips.map((safetyTip, index) => (
-              <li key={index} className="list-group-item">
-                {safetyTip}
-              </li>
-            ))}
+            {selectedData.safety_tips.map((safetyTip, index) => {
+              const [heading, description] = safetyTip.split(":");
+              return (
+                <li key={index} className="list-group-item">
+                  <strong>{heading}:</strong> {description}
+                </li>
+              );
+            })}
           </ul>
         </section>
       )}

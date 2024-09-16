@@ -1,5 +1,5 @@
 import React from "react";
-import "./DisplayExercise.css";
+import "./YogaDisplay.css";
 import { Link, useLocation } from "react-router-dom"; // Import Link for navigation
 import Yoga_Exercise from "../data/Yoga_Exercise";
 

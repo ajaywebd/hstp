@@ -61,12 +61,13 @@
   margin: 5px 0; /* Space between paragraphs */
   font-size: 1rem;
   color: #444444;
+  text-align: start;
 }
 
 .remedy-item strong {
   font-weight: 700; /* Bold for "Remedy" and "Precaution" */
   width: 100px;
-  display: inline-block; /* Ensure Remedy and Precaution align */
+  /* display: inline-block;  */
 }
 
 /* Preventive measures list styling */

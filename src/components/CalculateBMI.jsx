@@ -20,6 +20,7 @@ const CalculateBMI = () => {
       const heightInMeters = parseInt(feet) / 100;
       calculatedBMI = Math.round(weight / heightInMeters ** 2);
     }
+
     setBmi(calculatedBMI);
     determineBMICategory(calculatedBMI);
   };

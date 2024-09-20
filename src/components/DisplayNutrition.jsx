@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "./DisplayNutrition.css"; // Assuming this file contains custom styles
 import { Link, useLocation } from "react-router-dom";
-import bmiData from "../data/BMI.jsx";
+import bmiData1 from "../data/BMI1.jsx";
+import bmiData2 from "../data/BMI2.jsx";
+import bmiData3 from "../data/BMI3.jsx";
 
 const DisplayNutrition = () => {
+  const [data1, setData1] = useState(bmiData1);
+  const [data2, setData2] = useState(bmiData2);
+  const [data3, setData3] = useState(bmiData2);
+  const bmiData = [...data1, ...data2, ...data3];
+  console.log(bmiData);
+
   const location = useLocation();
   const { selectedAge, selectedBMI, selectedGender } = location.state || {};
 
@@ -14,9 +22,6 @@ const DisplayNutrition = () => {
       data.bmi == selectedBMI && // Match for BMI
       data.gender == selectedGender // Match for gender
   );
-
-  console.log(selectedAge, selectedBMI, selectedGender);
-  console.log(selectedData);
 
   return (
     <>

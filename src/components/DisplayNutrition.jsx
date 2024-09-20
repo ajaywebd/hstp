@@ -8,7 +8,7 @@ import bmiData3 from "../data/BMI3.jsx";
 const DisplayNutrition = () => {
   const [data1, setData1] = useState(bmiData1);
   const [data2, setData2] = useState(bmiData2);
-  const [data3, setData3] = useState(bmiData2);
+  const [data3, setData3] = useState(bmiData3);
   const bmiData = [...data1, ...data2, ...data3];
   console.log(bmiData);
 

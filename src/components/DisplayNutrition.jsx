@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import "./DisplayNutrition.css"; // Assuming this file contains custom styles
 import { Link, useLocation } from "react-router-dom";
-import bmiData1 from "../data/BMI1.jsx";
-import bmiData2 from "../data/BMI2.jsx";
-import bmiData3 from "../data/BMI3.jsx";
+import bmiData1 from "../data/BmiOne.jsx";
+import bmiData2 from "../data/BmiTwo.jsx";
+import bmiData3 from "../data/BmiThree.jsx";
+import bmiData4 from "../data/BmiFour.jsx";
 
 const DisplayNutrition = () => {
   const [data1, setData1] = useState(bmiData1);
   const [data2, setData2] = useState(bmiData2);
   const [data3, setData3] = useState(bmiData3);
-  const bmiData = [...data1, ...data2, ...data3];
+  const [data4, setData4] = useState(bmiData4);
+  const bmiData = [...data1, ...data2, ...data3, ...data4];
   console.log(bmiData);
 
   const location = useLocation();

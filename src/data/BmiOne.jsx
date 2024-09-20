@@ -1,4 +1,4 @@
-const BMI1 = [
+const BmiOne = [
   {
     age: 3,
     gender: "male",
@@ -17218,4 +17218,4 @@ const BMI1 = [
   },
 ];
 
-export default BMI1;
+export default BmiOne;

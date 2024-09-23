@@ -5,13 +5,17 @@ import bmiData1 from "../data/BmiOne.jsx";
 import bmiData2 from "../data/BmiTwo.jsx";
 import bmiData3 from "../data/BmiThree.jsx";
 import bmiData4 from "../data/BmiFour.jsx";
+import bmiData5 from "../data/BmiFive.jsx";
+import bmiData6 from "../data/BmiSix.jsx";
 
 const DisplayNutrition = () => {
   const [data1, setData1] = useState(bmiData1);
   const [data2, setData2] = useState(bmiData2);
   const [data3, setData3] = useState(bmiData3);
   const [data4, setData4] = useState(bmiData4);
-  const bmiData = [...data1, ...data2, ...data3, ...data4];
+  const [data5, setData5] = useState(bmiData5);
+  const [data6, setData6] = useState(bmiData6);
+  const bmiData = [...data1, ...data2, ...data3, ...data4, ...data5, ...data6];
   console.log(bmiData);
 
   const location = useLocation();

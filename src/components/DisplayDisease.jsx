@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import Male_Disease from "../data/Male_Disease.jsx"; // Importing the JSON data
-import Children_Disease from "../data/Children_Disease.jsx"; // Importing the JSON data
+// import Children_Disease from "../data/Children_Disease.jsx"; // Importing the JSON data
 import Female_Disease from "../data/Female_Disease.jsx"; // Importing the JSON data
 import "./DisplayDisease.css"; // Import the updated CSS file
 
@@ -15,8 +15,6 @@ const DisplayDisease = () => {
     selectedData = Female_Disease.find((disease) => disease.id === value);
   } else if (name === "male") {
     selectedData = Male_Disease.find((disease) => disease.id === value);
-  } else {
-    selectedData = Children_Disease.find((disease) => disease.id === value);
   }
 
   return (

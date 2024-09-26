@@ -22,7 +22,6 @@ import DisplayPilate from "./components/DisplayPilate";
 import CalculateBMI from "./components/CalculateBMI";
 import TopHeader from "./components/TopHeader";
 import YogaDisplay from "./components/YogaDisplay";
-import AcneDisease from "./components/padietric/AcneDisease";
 
 function App() {
   return (
@@ -44,7 +43,6 @@ function App() {
         <Route path="/exercise/yogaExercise" element={<YogaExercise />} />
         <Route path="/nutrition" element={<Nutrition />} />
         <Route path="/displayDisease" element={<DisplayDisease />} />
-        <Route path="/acneDisease" element={<AcneDisease />} />
         <Route path="/displayPilate" element={<DisplayPilate />} />
         <Route path="/displayAerobic" element={<DisplayAerobic />} />
         <Route path="/yogaDisplay" element={<YogaDisplay />} />

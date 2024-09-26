@@ -1,10 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./style.css"; // Assuming you create a separate CSS file for custom styles
+import dataFile from "../../pdf/Acne.htm";
+import dataFile1 from "../../pdf/Addison's Disease in Children.htm";
+import dataFile2 from "../../pdf/ADHD.htm";
+import dataFile3 from "../../pdf/Albinism.htm";
 
 const ChildrenDisease = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOrder, setSortOrder] = useState("asc");
+  const [htmlContent, setHtmlContent] = useState("");
+
+  useEffect(() => {
+    fetch("/pdf/Acne.htm")
+      .then((response) => response.text())
+      .then((text) => setHtmlContent(text))
+      .catch((err) => console.error("Error loading HTML file:", err));
+  }, []);
 
   const diseases = [
     "Acne",
@@ -91,12 +103,26 @@ const ChildrenDisease = () => {
             {filteredDiseases.length > 0 ? (
               filteredDiseases.map((disease, index) => (
                 <li key={index} className="mb-2">
-                  <Link
-                    state={{ value: index + 1, name: "children" }}
-                    to="/acneDisease"
-                    className="custom-link">
-                    {disease}
-                  </Link>
+                  {/* Conditionally render the link based on the disease */}
+                  {index === 0 ? (
+                    <Link to={dataFile} target="_blank">
+                      {disease}
+                    </Link>
+                  ) : index === 1 ? (
+                    <Link to={dataFile1} target="_blank">
+                      {disease}
+                    </Link>
+                  ) : index === 2 ? (
+                    <Link to={dataFile2} target="_blank">
+                      {disease}
+                    </Link>
+                  ) : index === 3 ? (
+                    <Link to={dataFile3} target="_blank">
+                      {disease}
+                    </Link>
+                  ) : (
+                    <span>{disease}</span> // Display plain text for other diseases
+                  )}
                 </li>
               ))
             ) : (

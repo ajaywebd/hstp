@@ -1,15 +1,70 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./style.css"; // Assuming you create a separate CSS file for custom styles
-import dataFile from "../../pdf/Acne.htm";
-import dataFile1 from "../../pdf/Addison's Disease in Children.htm";
-import dataFile2 from "../../pdf/ADHD.htm";
-import dataFile3 from "../../pdf/Albinism.htm";
+import dataFile from "../../doc/Acne.htm";
+import dataFile1 from "../../doc/Addison's Disease in Children.htm";
+import dataFile2 from "../../doc/ADHD.htm";
+import dataFile3 from "../../doc/Albinism.htm";
+import dataFile4 from "../../doc/Allergic Rhinitis.htm";
+import dataFile5 from "../../doc/Anemia.htm";
+import dataFile6 from "../../doc/Appendicitis.htm";
+import dataFile7 from "../../doc/Arrhythmia.htm";
+import dataFile8 from "../../doc/Asthma Flare -Ups.htm";
+import dataFile9 from "../../doc/Asthma in children.htm";
+import dataFile10 from "../../doc/Athlete's Foot.htm";
+import dataFile11 from "../../doc/Atrial Septal Defect.htm";
+import dataFile12 from "../../doc/Autism Spectrum Disorder.htm";
+import dataFile13 from "../../doc/Bad breath.htm";
+import dataFile14 from "../../doc/Bed-wetting.htm";
+import dataFile15 from "../../doc/Bell's Palsy.htm";
+import dataFile16 from "../../doc/Blindness.htm";
+import dataFile17 from "../../doc/Blisters.htm";
+import dataFile18 from "../../doc/Bone Tumors.htm";
+import dataFile19 from "../../doc/Botulism.htm";
+import dataFile20 from "../../doc/Bronchitis and bronchiolitis.htm";
+import dataFile21 from "../../doc/Canker sores (Aphthous Ulcers).htm";
+import dataFile22 from "../../doc/Cardiomyopathy.htm";
+import dataFile23 from "../../doc/Celiac Disease.htm";
+import dataFile24 from "../../doc/Cellulitis.htm";
+import dataFile25 from "../../doc/Chickenpox.htm";
+import dataFile26 from "../../doc/Childhood fears and Anxieties.htm";
+import dataFile27 from "../../doc/Chronic Kidney Disease.htm";
 
 const ChildrenDisease = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOrder, setSortOrder] = useState("asc");
   const [htmlContent, setHtmlContent] = useState("");
+
+  const diseasesData = [
+    { name: "Acne", file: dataFile },
+    { name: "Addison's Disease in Children", file: dataFile1 },
+    { name: "ADHD", file: dataFile2 },
+    { name: "Albinism", file: dataFile3 },
+    { name: "Allergic Rhinitis", file: dataFile4 },
+    { name: "Anemia", file: dataFile5 },
+    { name: "Appendicitis", file: dataFile6 },
+    { name: "Arrhythmia", file: dataFile7 },
+    { name: "Asthma Flare-Ups", file: dataFile8 },
+    { name: "Asthma in children", file: dataFile9 },
+    { name: "Athlete's Foot", file: dataFile10 },
+    { name: "Atrial Septal Defect (ASD)", file: dataFile11 },
+    { name: "Autism Spectrum Disorder", file: dataFile12 },
+    { name: "Bad breath", file: dataFile13 },
+    { name: "Bed-wetting", file: dataFile14 },
+    { name: "Bell's Palsy", file: dataFile15 },
+    { name: "Blindness", file: dataFile16 },
+    { name: "Blisters", file: dataFile17 },
+    { name: "Bone Tumors", file: dataFile18 },
+    { name: "Botulism", file: dataFile19 },
+    { name: "Bronchitis and bronchiolitis", file: dataFile20 },
+    { name: "Canker sores (Aphthous Ulcers)", file: dataFile21 },
+    { name: "Cardiomyopathy", file: dataFile22 },
+    { name: "Celiac Disease", file: dataFile23 },
+    { name: "Cellulitis", file: dataFile24 },
+    { name: "Chickenpox", file: dataFile25 },
+    { name: "Childhood fears and Anxieties", file: dataFile26 },
+    { name: "Chronic Kidney Disease", file: dataFile27 },
+  ];
 
   useEffect(() => {
     fetch("/pdf/Acne.htm")
@@ -18,52 +73,18 @@ const ChildrenDisease = () => {
       .catch((err) => console.error("Error loading HTML file:", err));
   }, []);
 
-  const diseases = [
-    "Acne",
-    "Addison's Disease in Children",
-    "ADHD",
-    "Albinism",
-    "Allergic Rhinitis",
-    "Anemia",
-    "Appendicitis",
-    "Arrhythmia",
-    "Asthma Flare-Ups",
-    "Asthma in children",
-    "Athlete's Foot",
-    "Atrial Septal Defect (ASD)",
-    "Autism Spectrum Disorder",
-    "Bad breath",
-    "Bed-wetting",
-    "Bell's Palsy",
-    "Blindness",
-    "Blisters",
-    "Bone Tumors",
-    "Botulism",
-    "Bronchitis and bronchiolitis",
-    "Canker sores (Aphthous Ulcers)",
-    "Cardiomyopathy",
-    "Celiac Disease",
-    "Cellulitis",
-    "Cerebral Palsy",
-    "Chickenpox",
-    "Childhood fears and Anxieties",
-    "Chronic Kidney Disease",
-    "Cleft Lip and Cleft Palate",
-    "Clubfoot",
-  ];
-
-  // Sort the diseases alphabetically based on the sortOrder
-  const sortedDiseases = diseases.sort((a, b) => {
+  // Sort diseases and files based on the sortOrder
+  const sortedDiseases = [...diseasesData].sort((a, b) => {
     if (sortOrder === "asc") {
-      return a.localeCompare(b);
+      return a.name.localeCompare(b.name);
     } else {
-      return b.localeCompare(a);
+      return b.name.localeCompare(a.name);
     }
   });
 
   // Filter the diseases based on the search term
   const filteredDiseases = sortedDiseases.filter((disease) =>
-    disease.toLowerCase().includes(searchTerm.toLowerCase())
+    disease.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -103,26 +124,9 @@ const ChildrenDisease = () => {
             {filteredDiseases.length > 0 ? (
               filteredDiseases.map((disease, index) => (
                 <li key={index} className="mb-2">
-                  {/* Conditionally render the link based on the disease */}
-                  {index === 0 ? (
-                    <Link to={dataFile} target="_blank">
-                      {disease}
-                    </Link>
-                  ) : index === 1 ? (
-                    <Link to={dataFile1} target="_blank">
-                      {disease}
-                    </Link>
-                  ) : index === 2 ? (
-                    <Link to={dataFile2} target="_blank">
-                      {disease}
-                    </Link>
-                  ) : index === 3 ? (
-                    <Link to={dataFile3} target="_blank">
-                      {disease}
-                    </Link>
-                  ) : (
-                    <span>{disease}</span> // Display plain text for other diseases
-                  )}
+                  <Link to={disease.file} target="_blank">
+                    {disease.name}
+                  </Link>
                 </li>
               ))
             ) : (
